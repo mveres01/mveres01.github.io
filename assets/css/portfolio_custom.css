@@ -335,75 +335,147 @@ ninja-keys {
 }
 
 /* --------------------------------------------------------------------------
-   6. Projects Tab Streamlining (Compact, clean, responsive cards)
+   6. Projects Layout (Modern Responsive Grid, Uniform Images & Whitespace)
    -------------------------------------------------------------------------- */
-.projects h2.category {
-  font-size: 1.15rem !important;
+.projects .category,
+.project-category-heading {
+  font-size: 1.2rem !important;
   font-weight: 700 !important;
   color: var(--global-text-color) !important;
   border-bottom: 2px solid var(--global-theme-color) !important;
-  padding-bottom: 0.35rem !important;
-  margin-top: 1.8rem !important;
-  margin-bottom: 1rem !important;
+  padding-bottom: 0.4rem !important;
+  margin-top: 2.2rem !important;
+  margin-bottom: 1.25rem !important;
   text-transform: capitalize !important;
+  display: block;
 }
 
-.project-compact-card {
-  border: 1px solid var(--global-divider-color);
-  border-radius: 6px;
+/* 2-Column Responsive Card Grid */
+.project-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.75rem;
+  margin-top: 1rem;
+  margin-bottom: 2.75rem;
+  align-items: stretch;
+}
+
+@media (max-width: 768px) {
+  .project-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* Professional Showcase Card */
+.project-showcase-card {
+  display: flex;
+  flex-direction: column;
   background-color: var(--global-card-bg-color);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 8px;
   overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  height: 100%;
 }
 
-.project-compact-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+.project-showcase-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  border-color: rgba(var(--global-theme-color-rgb, 37, 99, 235), 0.35);
 }
 
-.project-thumb-container {
-  height: 120px;
+/* Fixed-Height Uniform Image Container */
+.project-card-image-box {
   width: 100%;
+  height: 180px;
+  min-height: 180px;
+  max-height: 180px;
   overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.03);
+  background-color: rgba(0, 0, 0, 0.02);
   border-bottom: 1px solid var(--global-divider-color);
+  position: relative;
+  display: block;
 }
 
-.project-thumb-img {
+.project-card-image-box a {
+  display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: transform 0.2s ease;
 }
 
-.project-compact-card:hover .project-thumb-img {
-  transform: scale(1.02);
+.project-card-img {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 180px !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transition: transform 0.3s ease;
 }
 
-.project-title {
-  font-size: 0.96rem !important;
+.project-showcase-card:hover .project-card-img {
+  transform: scale(1.03);
+}
+
+/* Card Content Area with Ample Whitespace */
+.project-card-info {
+  padding: 1.35rem 1.25rem 1.15rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  background-color: var(--global-card-bg-color);
+}
+
+.project-card-title {
+  font-size: 1.02rem !important;
   font-weight: 650 !important;
-  line-height: 1.35 !important;
+  line-height: 1.38 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0.65rem !important;
+  letter-spacing: -0.01em !important;
 }
 
-.project-desc {
-  font-size: 0.83rem !important;
-  line-height: 1.45 !important;
+.project-card-title a {
+  color: var(--global-text-color) !important;
+  text-decoration: none !important;
+  transition: color 0.15s ease-in-out;
 }
 
-.project-links {
-  gap: 5px !important;
+.project-card-title a:hover {
+  color: var(--global-theme-color) !important;
 }
 
-.project-btn {
+.project-card-description {
+  font-size: 0.88rem !important;
+  line-height: 1.55 !important;
+  color: var(--global-text-color-light) !important;
+  margin-bottom: 1.25rem !important;
+  flex-grow: 1;
+}
+
+/* Action Links & Badges at Bottom */
+.project-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-top: auto;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--global-divider-color);
+}
+
+.p-btn {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  min-width: 38px !important;
-  height: 22px !important;
-  padding: 0 0.45rem !important;
-  font-size: 0.68rem !important;
+  height: 24px !important;
+  padding: 0 0.55rem !important;
+  font-size: 0.7rem !important;
   font-weight: 600 !important;
   letter-spacing: 0.3px !important;
   text-transform: uppercase !important;
@@ -412,24 +484,194 @@ ninja-keys {
   background-color: var(--global-bg-color) !important;
   color: var(--global-text-color) !important;
   text-decoration: none !important;
+  line-height: 1 !important;
   transition: all 0.15s ease-in-out !important;
 }
 
-.project-btn:hover {
+.p-btn:hover {
   border-color: var(--global-theme-color) !important;
   color: var(--global-theme-color) !important;
-  background-color: rgba(var(--global-theme-color-rgb, 37, 99, 235), 0.06) !important;
+  background-color: rgba(var(--global-theme-color-rgb, 37, 99, 235), 0.08) !important;
 }
 
-.project-btn-details {
-  border-color: rgba(var(--global-theme-color-rgb, 37, 99, 235), 0.3) !important;
+.p-btn-more {
+  border-color: rgba(var(--global-theme-color-rgb, 37, 99, 235), 0.35) !important;
   color: var(--global-theme-color) !important;
+  font-weight: 650 !important;
+  margin-left: auto;
+}
+
+.p-btn-more:hover {
+  background-color: var(--global-theme-color) !important;
+  color: #fff !important;
+}
+
+/* Repositories Grid */
+.repo-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 1rem;
+  margin-bottom: 3.5rem;
+}
+
+@media (max-width: 900px) {
+  .repo-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
 }
 
 .repo-card {
-  border-left: 3px solid var(--global-theme-color) !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.25rem;
+  background-color: var(--global-card-bg-color);
+  border: 1px solid var(--global-divider-color);
+  border-left: 3.5px solid var(--global-theme-color) !important;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%;
 }
 
+.repo-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.07);
+}
+
+.repo-card-title {
+  font-size: 0.98rem !important;
+  font-weight: 700 !important;
+  margin: 0 !important;
+}
+
+.repo-card-title a {
+  color: var(--global-text-color) !important;
+  text-decoration: none !important;
+}
+
+.repo-card-title a:hover {
+  color: var(--global-theme-color) !important;
+}
+
+.repo-card-desc {
+  font-size: 0.84rem !important;
+  line-height: 1.5 !important;
+  color: var(--global-text-color-light) !important;
+  margin-top: 0.5rem !important;
+  margin-bottom: 1.15rem !important;
+  flex-grow: 1;
+}
+
+.repo-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--global-divider-color);
+}
+
+/* Individual Project Detail Pages Polish */
+.post header.post-header {
+  margin-bottom: 2rem !important;
+  border-bottom: 1px solid var(--global-divider-color) !important;
+  padding-bottom: 1.25rem !important;
+}
+
+.post header.post-header .post-title {
+  font-size: 1.85rem !important;
+  font-weight: 700 !important;
+  color: var(--global-text-color) !important;
+  margin-bottom: 0.5rem !important;
+  letter-spacing: -0.02em !important;
+}
+
+.post header.post-header .post-description {
+  font-size: 1.05rem !important;
+  line-height: 1.55 !important;
+  color: var(--global-text-color-light) !important;
+  margin: 0 !important;
+}
+
+.post article h3 {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  margin-top: 2.2rem !important;
+  margin-bottom: 0.85rem !important;
+  color: var(--global-text-color) !important;
+}
+
+.post article p {
+  font-size: 0.95rem !important;
+  line-height: 1.65 !important;
+  color: var(--global-text-color) !important;
+  margin-bottom: 1.25rem !important;
+}
+
+.post article figure {
+  margin: 1.75rem 0 !important;
+  text-align: center;
+}
+
+.post article figure img {
+  max-width: 100% !important;
+  max-height: 480px !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+  border-radius: 8px !important;
+  border: 1px solid var(--global-divider-color) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06) !important;
+  margin: 0 auto !important;
+}
+
+.post article .caption {
+  font-size: 0.86rem !important;
+  line-height: 1.45 !important;
+  color: var(--global-text-color-light) !important;
+  margin-top: 0.75rem !important;
+  text-align: center !important;
+}
+
+.post article ul {
+  padding-left: 1.35rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.post article ul li {
+  font-size: 0.93rem !important;
+  line-height: 1.6 !important;
+  margin-bottom: 0.45rem !important;
+  color: var(--global-text-color) !important;
+}
+
+.post article .project-actions {
+  margin-top: 2rem !important;
+  padding-top: 1.25rem !important;
+  border-top: 1px solid var(--global-divider-color) !important;
+  display: flex !important;
+  gap: 0.65rem !important;
+  flex-wrap: wrap !important;
+}
+
+.post article .project-actions .btn {
+  font-size: 0.78rem !important;
+  font-weight: 600 !important;
+  padding: 0.35rem 0.85rem !important;
+  border-radius: 4px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.3px !important;
+  text-decoration: none !important;
+}
+
+/* Hide empty references block if no citations exist */
+.post h2:has(+ .publications:empty),
+.post h2:has(+ div.publications:empty),
+.post .publications:empty {
+  display: none !important;
+}
 
 /* --------------------------------------------------------------------------
    7. CV Styling

@@ -11,6 +11,8 @@ pdf: "https://www.mdpi.com/2077-0472/14/2/173/pdf"
 related_publications: true
 ---
 
+<link rel="stylesheet" href="{{ '/assets/css/portfolio_custom.css' | relative_url }}">
+
 ### Overview
 
 Commercial production greenhouses present extremely complex visual environments: extreme glare, severe occlusions from dense foliage, variable ripeness stages, and hanging support infrastructure.

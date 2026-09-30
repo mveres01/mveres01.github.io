@@ -11,6 +11,8 @@ pdf: "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9144383"
 related_publications: true
 ---
 
+<link rel="stylesheet" href="{{ '/assets/css/portfolio_custom.css' | relative_url }}">
+
 ### Overview
 
 When robots manipulate objects, an object's visual geometric centroid often diverges significantly from its true center of mass and inertial parameters. Grasping strategies that ignore mass distribution frequently fail during lift and transfer.

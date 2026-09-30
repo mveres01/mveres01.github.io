@@ -12,6 +12,8 @@ code: "https://github.com/mveres01/pytorch-drl4vrp"
 related_publications: true
 ---
 
+<link rel="stylesheet" href="{{ '/assets/css/portfolio_custom.css' | relative_url }}">
+
 ### Overview
 
 Intelligent transportation systems (ITS) and logistics operations face NP-hard combinatorial optimization challenges such as the Traveling Salesperson Problem (TSP) and Vehicle Routing Problem (VRP). Deep reinforcement learning offers compelling heuristics that learn directly from problem instances.

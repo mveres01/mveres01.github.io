@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: Research Engineer &bull; University of Guelph
+subtitle: Machine Learning Engineer & Researcher &bull; University of Guelph
 
 profile:
   align: right
@@ -26,16 +26,18 @@ latest_posts:
 
 <link rel="stylesheet" href="{{ '/assets/css/portfolio_custom.css' | relative_url }}">
 
-I am a research engineer at the [University of Guelph](https://www.uoguelph.ca/), and typically work on industry and research problems involving machine learning, robots, custom data collection rigs, and (initially!) under-defined problems. Day-to-day I write code, train models, run simulations, mentor teams and students, and consult on projects with an emphasis on data science and machine learning.
+I’m a Machine Learning Engineer and Researcher focused on computer vision, robotics, and industrial automation. My work blends academic R&D and spans collaborations with industry partners, from high-throughput factory inspection systems to autonomous agricultural scouting.
 
-### Research Interests
+### What I Focus On
 
-I'm interested in using applied ML, particularly deep learning, for solving real-world problems. I am also interested in how deep learning can be used to help humans learn via feedback loops (a kind of reverse-learning of sorts!).
+- **Computer Vision & Deep Learning:** Object detection, semantic segmentation, and domain generalization under real-world shifts (lighting, weather, sensor noise).
+- **Simulation & Robotics:** Grasp pose estimation, MuJoCo simulation.
+- **End-to-End Systems:** Full machine-learning pipelines from data collection to model training, validation, and deployment.
+- **Open Source:** Creator of a popular PyTorch deep reinforcement learning framework for vehicle routing (500+ GitHub Stars).
 
-### Ongoing Work
+### Background & Opportunities
 
-- **Robotic Harvesting:** Optimizing robot harvesting in tomato greenhouses via physics-based simulation
-- **Micro-Defect Metrology:** Micrometer-scale defect detection on unpainted vehicle parts
+I speak English (native) and Korean (TOPIK Level 5). I'm open to roles in Canada or South Korea (as well as global opportunities that bridge the two).
 
 
 

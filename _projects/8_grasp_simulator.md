@@ -12,6 +12,8 @@ code: "https://github.com/mveres01/multi-contact-grasping"
 related_publications: true
 ---
 
+<link rel="stylesheet" href="{{ '/assets/css/portfolio_custom.css' | relative_url }}">
+
 ### Overview
 
 Training deep learning models for robotic grasp synthesis requires substantial quantities of labeled physical interaction data. Acquiring tens of thousands of real-world trials is often prohibitively slow and wear-intensive.

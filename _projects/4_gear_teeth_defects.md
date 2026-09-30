@@ -11,6 +11,8 @@ pdf: "https://www.mdpi.com/1424-8220/21/24/8480/pdf"
 related_publications: true
 ---
 
+<link rel="stylesheet" href="{{ '/assets/css/portfolio_custom.css' | relative_url }}">
+
 ### Overview
 
 Surface defects on precision automotive transmission gears can appear at arbitrary locations across intricate helical tooth profiles. This project developed a proof-of-concept automated vision solution tailored for industrial quality assurance.

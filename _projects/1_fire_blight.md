@@ -11,6 +11,8 @@ pdf: "https://www.mdpi.com/1424-8220/24/16/5387/pdf"
 related_publications: true
 ---
 
+<link rel="stylesheet" href="{{ '/assets/css/portfolio_custom.css' | relative_url }}">
+
 ### Overview
 
 Fire blight is a highly infectious and destructive bacterial disease affecting apple and pear orchards. While managing the disease is critical to orchard health, identifying symptoms early is an exceptionally difficult challenge that typically demands trained expert scouts.

@@ -11,6 +11,8 @@ pdf: "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7814247"
 related_publications: true
 ---
 
+<link rel="stylesheet" href="{{ '/assets/css/portfolio_custom.css' | relative_url }}">
+
 ### Overview
 
 Physical objects admit multiple feasible grasp configurations — there is rarely a single unique solution. Drawing inspiration from human motor imagery, this work explores how generative neural models can conceptualize and sample multimodal grasp distributions.

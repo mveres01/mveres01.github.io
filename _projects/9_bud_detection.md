@@ -11,6 +11,8 @@ pdf: "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6816863"
 related_publications: true
 ---
 
+<link rel="stylesheet" href="{{ '/assets/css/portfolio_custom.css' | relative_url }}">
+
 ### Overview
 
 In commercial floriculture, detecting flower buds on potted chrysanthemum plants is vital for automated disbudding and grading before market distribution.

@@ -11,6 +11,8 @@ pdf: "https://www.mdpi.com/1424-8220/23/20/8541/pdf"
 related_publications: true
 ---
 
+<link rel="stylesheet" href="{{ '/assets/css/portfolio_custom.css' | relative_url }}">
+
 ### Overview
 
 To deploy automated gear inspection systems directly in-situ within automotive manufacturing lines, systems must operate rapidly within assembly cycle times while reliably distinguishing multiple defect types across complex helical tooth surfaces.
