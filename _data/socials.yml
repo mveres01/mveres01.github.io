@@ -2,10 +2,6 @@
 # the socials will be displayed in the order they are defined here
 # for more information, please refer to the documentation of jekyll-socials plugin: https://github.com/george-gca/jekyll-socials
 email: mveres@uoguelph.ca
-github_user: mveres01
+github_username: mveres01
 linkedin_username: matthew-veres
-rss_icon: false
-custom_social:
-  logo: fas fa-university
-  title: University of Guelph
-  url: https://www.uoguelph.ca/
+work_url: https://www.uoguelph.ca/
