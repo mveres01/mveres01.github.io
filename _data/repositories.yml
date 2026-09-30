@@ -1,14 +1,10 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - mveres01
 
-repo_description_lines_max: 2
+repo_description_lines_max: 3
 
 github_repos:
-  - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - mathjax/MathJax
-  - jpswalsh/academicons
+  - mveres01/pytorch-drl4vrp
+  - mveres01/multi-contact-grasping
+  - mveres01/grasping
+  - mveres01/mveres01.github.io

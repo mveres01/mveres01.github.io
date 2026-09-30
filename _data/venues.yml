@@ -1,9 +1,23 @@
-"AJP":
-  url: https://aapt.scitation.org/journal/ajp
-  color: "#00369f"
+"Sensors":
+  url: https://www.mdpi.com/journal/sensors
+  color: "#2563eb"
 
-"PhysRev":
-  url: https://journals.aps.org/
+"Agriculture":
+  url: https://www.mdpi.com/journal/agriculture
+  color: "#059669"
 
-"Vision":
-  color: "#009f36"
+"IEEE RA-L":
+  url: https://www.ieee-ras.org/publications/ra-l
+  color: "#ea580c"
+
+"IEEE T-ITS":
+  url: https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=6979
+  color: "#0284c7"
+
+"CRV":
+  url: https://www.computerrobotvision.org/
+  color: "#7c3aed"
+
+"arXiv":
+  url: https://arxiv.org/
+  color: "#b91c1c"
