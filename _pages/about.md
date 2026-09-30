@@ -1,6 +1,6 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
 subtitle: Research Engineer &bull; University of Guelph
 
@@ -19,7 +19,7 @@ social: true # includes social icons at the bottom of the page
 announcements:
   enabled: true
   scrollable: false
-  limit: 3
+  limit: 5
 
 latest_posts:
   enabled: false
@@ -50,9 +50,3 @@ I'm interested in using applied ML, particularly deep learning, for solving real
 </div>
 
 </details>
-
-<div class="mt-4 mb-3 text-center">
-  <a href="{{ '/publications/' | relative_url }}" class="btn btn-sm z-depth-0" style="padding: 0.45rem 1.25rem; font-weight: 600; font-size: 0.85rem; border: 1.5px solid var(--global-theme-color); color: var(--global-theme-color); border-radius: 6px; text-transform: none; text-decoration: none;">
-    View All 10 Peer-Reviewed Publications &rarr;
-  </a>
-</div>

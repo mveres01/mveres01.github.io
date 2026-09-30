@@ -1,6 +1,6 @@
 ---
 layout: page
-title: projects
+title: Projects
 permalink: /projects/
 description: Research and industry projects spanning agricultural robotics, industrial inspection, and robotic manipulation.
 nav: true
@@ -22,14 +22,14 @@ horizontal: false
   <!-- Generate cards for each project -->
   {% if page.horizontal %}
   <div class="container">
-    <div class="row row-cols-1 row-cols-md-2">
+    <div class="row row-cols-1 row-cols-md-2 g-4">
     {% for project in sorted_projects %}
       {% include projects_horizontal.liquid %}
     {% endfor %}
     </div>
   </div>
   {% else %}
-  <div class="row row-cols-1 row-cols-md-3">
+  <div class="row row-cols-1 row-cols-md-2 g-4 mb-4">
     {% for project in sorted_projects %}
       {% include projects.liquid %}
     {% endfor %}
@@ -48,14 +48,14 @@ horizontal: false
 {% if page.horizontal %}
 
   <div class="container">
-    <div class="row row-cols-1 row-cols-md-2">
+    <div class="row row-cols-1 row-cols-md-2 g-4">
     {% for project in sorted_projects %}
       {% include projects_horizontal.liquid %}
     {% endfor %}
     </div>
   </div>
   {% else %}
-  <div class="row row-cols-1 row-cols-md-3">
+  <div class="row row-cols-1 row-cols-md-2 g-4 mb-4">
     {% for project in sorted_projects %}
       {% include projects.liquid %}
     {% endfor %}

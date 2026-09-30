@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /repositories/
-title: repositories
+title: Repositories
 description: Open source machine learning and robotics code repositories.
 nav: true
 nav_order: 4

@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Presented our work on precision weed management strategies in commercial crop fields at the [Ontario Ag Robotics Working Group](https://www.agroboticswg.com/meetings/april-12-2024-meeting).
+Our collaborator presented our work on precision weed management strategies in commercial crop fields at the [Ontario Ag Robotics Working Group](https://www.agroboticswg.com/meetings/april-12-2024-meeting).

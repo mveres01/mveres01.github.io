@@ -1,7 +1,7 @@
 /* ==========================================================================
    Custom Professional Academic Styles for Matthew Veres Portfolio
    Overrides default spacing, bibliography clunkiness, button sizes, CV,
-   and navigation / profile layout.
+   navigation, scrolling behavior, and projects layout.
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -24,14 +24,48 @@ p {
 }
 
 /* --------------------------------------------------------------------------
-   2. Navigation Bar Optimization
+   2. Disable Persistent / Fixed Headers and Footers Across Scrolling
    -------------------------------------------------------------------------- */
-.navbar {
-  padding-top: 0.75rem !important;
-  padding-bottom: 0.75rem !important;
-  border-bottom: 1px solid var(--global-divider-color) !important;
+/* Unpin navbar from fixed top so it scrolls naturally with the page */
+body.fixed-top-nav {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }
 
+#navbar.fixed-top,
+.navbar.fixed-top,
+.navbar {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  width: 100% !important;
+  z-index: 100 !important;
+  box-shadow: none !important;
+  border-bottom: 1px solid var(--global-divider-color) !important;
+  padding-top: 0.85rem !important;
+  padding-bottom: 0.85rem !important;
+  background-color: var(--global-bg-color) !important;
+}
+
+/* Unpin footer from fixed bottom so it sits at bottom of page content */
+footer.fixed-bottom,
+footer {
+  position: relative !important;
+  bottom: auto !important;
+  left: auto !important;
+  right: auto !important;
+  width: 100% !important;
+  margin-top: 3.5rem !important;
+  border-top: 1px solid var(--global-divider-color) !important;
+  background-color: var(--global-bg-color) !important;
+  padding-top: 1.25rem !important;
+  padding-bottom: 1.25rem !important;
+}
+
+/* --------------------------------------------------------------------------
+   3. Navigation Bar & Heading Capitalization
+   -------------------------------------------------------------------------- */
 .navbar-brand {
   font-weight: 700 !important;
   font-size: 1.15rem !important;
@@ -44,6 +78,7 @@ p {
   font-weight: 550 !important;
   padding: 0.35rem 0.85rem !important;
   color: var(--global-text-color) !important;
+  text-transform: capitalize !important;
   transition: color 0.15s ease-in-out;
 }
 
@@ -52,8 +87,64 @@ p {
   color: var(--global-theme-color) !important;
 }
 
+/* Ensure consistent Title Case on all section headings */
+.post article > h2,
+.post article > h3 {
+  text-transform: capitalize !important;
+  margin-top: 1.75rem !important;
+  margin-bottom: 0.9rem !important;
+}
+
+/* Transform lowercase 'news' link into clean 'News' heading */
+.post article > h2:has(a[href*="news"]) a,
+.post article > h2 a[href*="news"] {
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none !important;
+  color: var(--global-text-color) !important;
+  visibility: hidden;
+  position: relative;
+  font-size: 1.35rem !important;
+  font-weight: 700 !important;
+}
+
+.post article > h2:has(a[href*="news"]) a::after,
+.post article > h2 a[href*="news"]::after {
+  content: "News";
+  visibility: visible;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: 700;
+  color: var(--global-text-color) !important;
+}
+
+/* Transform lowercase 'selected publications' into clean 'Publications' heading */
+.post article > h2:has(a[href*="publications"]) a,
+.post article > h2 a[href*="publications"] {
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none !important;
+  color: var(--global-text-color) !important;
+  visibility: hidden;
+  position: relative;
+  font-size: 1.35rem !important;
+  font-weight: 700 !important;
+}
+
+.post article > h2:has(a[href*="publications"]) a::after,
+.post article > h2 a[href*="publications"]::after {
+  content: "Publications";
+  visibility: visible;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: 700;
+  color: var(--global-text-color) !important;
+}
+
 /* --------------------------------------------------------------------------
-   3. Profile Picture & About Page Optimization
+   4. Profile Picture & About Page Optimization
    -------------------------------------------------------------------------- */
 .profile {
   margin-bottom: 1.5rem;
@@ -78,7 +169,7 @@ p {
 }
 
 /* --------------------------------------------------------------------------
-   4. Publications & Bibliography (Tighter spacing, no journal badge over image, no BibTeX)
+   5. Publications & Bibliography (Tight layout, no badges, summarized descriptions)
    -------------------------------------------------------------------------- */
 .publications ol.bibliography {
   padding-left: 0;
@@ -126,12 +217,31 @@ p {
   font-size: 0.88rem !important;
   line-height: 1.35 !important;
   color: var(--global-text-color-light) !important;
-  margin-bottom: 0.35rem !important;
+  margin-bottom: 0.3rem !important;
 }
 
 .publications ol.bibliography li .periodical em {
   font-style: italic !important;
   color: var(--global-text-color) !important;
+}
+
+/* Display summarized abstract directly under each citation */
+.publications ol.bibliography li .abstract.hidden {
+  display: block !important;
+  background: transparent !important;
+  border-left: 2.5px solid var(--global-theme-color) !important;
+  border-radius: 0 !important;
+  padding: 0.25rem 0 0.25rem 0.75rem !important;
+  margin-top: 0.35rem !important;
+  margin-bottom: 0.45rem !important;
+  box-shadow: none !important;
+}
+
+.publications ol.bibliography li .abstract.hidden p {
+  font-size: 0.88rem !important;
+  line-height: 1.48 !important;
+  margin: 0 !important;
+  color: var(--global-text-color-light) !important;
 }
 
 /* Hide journal badge on top of image */
@@ -172,10 +282,11 @@ p {
   transform: scale(1.02);
 }
 
-/* Hide bibtex buttons and drawers */
+/* Hide bibtex buttons and redundant Abs button since abstract is shown directly */
 .publications ol.bibliography li .links a.bibtex,
 .publications ol.bibliography li .links .bibtex,
-.publications ol.bibliography li .bibtex.hidden {
+.publications ol.bibliography li .bibtex.hidden,
+.publications ol.bibliography li .links a.abstract {
   display: none !important;
 }
 
@@ -222,24 +333,76 @@ p {
   display: none !important;
 }
 
-/* Abstract drawer dropdown styling */
-.publications ol.bibliography li .hidden {
-  background-color: var(--global-code-bg-color) !important;
-  border-left: 3px solid var(--global-theme-color) !important;
-  border-radius: 0 6px 6px 0 !important;
-  margin-top: 0.6rem !important;
-  padding: 0.65rem 0.9rem !important;
+/* --------------------------------------------------------------------------
+   6. Projects Tab Streamlining (Modern, clean, balanced cards)
+   -------------------------------------------------------------------------- */
+.projects h2.category {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: var(--global-text-color) !important;
+  border-bottom: 2px solid var(--global-theme-color) !important;
+  padding-bottom: 0.4rem !important;
+  margin-top: 2rem !important;
+  margin-bottom: 1.2rem !important;
+  text-transform: capitalize !important;
 }
 
-.publications ol.bibliography li .hidden p {
-  font-size: 0.88rem !important;
-  line-height: 1.5 !important;
-  margin: 0 !important;
+.projects .row-cols-md-2 > div {
+  display: flex !important;
+}
+
+.projects .card {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  border: 1px solid var(--global-divider-color) !important;
+  border-radius: 8px !important;
+  background-color: var(--global-card-bg-color) !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04) !important;
+  transition: transform 0.15s ease, box-shadow 0.15s ease !important;
+  overflow: hidden !important;
+  margin-bottom: 0 !important;
+}
+
+.projects .card:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08) !important;
+}
+
+.projects .card img {
+  border-top-left-radius: 8px !important;
+  border-top-right-radius: 8px !important;
+  height: 180px !important;
+  object-fit: cover !important;
+  width: 100% !important;
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.projects .card .card-body {
+  padding: 1.1rem 1.25rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  flex-grow: 1 !important;
+}
+
+.projects .card .card-title {
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 0.4rem !important;
+  line-height: 1.35 !important;
   color: var(--global-text-color) !important;
 }
 
+.projects .card .card-text {
+  font-size: 0.88rem !important;
+  line-height: 1.5 !important;
+  color: var(--global-text-color-light) !important;
+  margin-bottom: 0.75rem !important;
+  flex-grow: 1 !important;
+}
+
 /* --------------------------------------------------------------------------
-   5. CV Styling (Clean, Thoughtful Academic Look - Not Over-engineered)
+   7. CV Styling
    -------------------------------------------------------------------------- */
 .cv-header {
   font-size: 0.92rem;
