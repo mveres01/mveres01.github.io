@@ -10,8 +10,7 @@ profile:
   image_circular: true # crops the image to make it circular
   more_info: >
     <p class="font-weight-bold mb-0">School of Engineering</p>
-    <p class="mb-1 text-muted">University of Guelph</p>
-    <p class="mb-0 text-muted"><i class="fa-solid fa-location-dot me-1"></i> Kitchener &bull; Ontario, Canada</p>
+    <p class="text-muted mb-0">University of Guelph</p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
@@ -35,9 +34,7 @@ I'm interested in using applied ML, particularly deep learning, for solving real
 
 ### Ongoing Work
 
-- **Precision Weed Management:** Autonomous weed management strategies in commercial crop fields ([presentation video](https://www.agroboticswg.com/meetings/april-12-2024-meeting))
 - **Robotic Harvesting:** Optimizing robot harvesting in tomato greenhouses via physics-based simulation
-- **Multi-Phase Fluid Flow:** Deep learning techniques for analyzing multi-phase flow patterns
 - **Micro-Defect Metrology:** Micrometer-scale defect detection on unpainted vehicle parts
 
 <details>

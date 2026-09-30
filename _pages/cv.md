@@ -3,7 +3,7 @@ layout: page
 permalink: /cv/
 title: CV
 nav: true
-nav_order: 3
+nav_order: 1
 description: Machine Learning Research Engineer &bull; Curriculum Vitae
 toc:
   sidebar: left
@@ -177,19 +177,6 @@ toc:
   </li>
   <li>
     Tarry, C., Wspanialy, P., <strong>Veres, M.</strong>, &amp; Moussa, M. An Integrated Bud Detection and Localization System for Application in Greenhouse Automation. <em>Canadian Conference on Computer and Robot Vision (CRV)</em>, 2014.
-  </li>
-</ol>
-
----
-
-## Papers Under Review
-
-<ol class="cv-numbered-list mb-4">
-  <li>
-    <strong>Veres, M.</strong>, Moussa, M., &amp; Tarry, C. Grasp Pose Selection for Tomato Greenhouses using Physics Based Simulation. <em>IEEE Robotics and Automation Letters</em>, 2026.
-  </li>
-  <li>
-    <strong>Veres, M.</strong>, Prasad, N., Tarry, C., &amp; Moussa, M. A Multi-stage System for Early-Stage Weed Density Estimation in Lima Bean Fields. <em>Computers and Electronics in Agriculture</em>, 2026.
   </li>
 </ol>
 

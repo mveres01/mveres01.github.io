@@ -1,10 +1,6 @@
-github_users:
-  - mveres01
-
 repo_description_lines_max: 3
 
 github_repos:
   - mveres01/pytorch-drl4vrp
   - mveres01/multi-contact-grasping
   - mveres01/grasping
-  - mveres01/mveres01.github.io

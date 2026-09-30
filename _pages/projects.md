@@ -3,8 +3,7 @@ layout: page
 title: Projects
 permalink: /projects/
 description: Research and industry projects spanning agricultural robotics, industrial inspection, and robotic manipulation.
-nav: true
-nav_order: 1
+nav: false
 display_categories: [Agri-Food & Robotics, Industrial Inspection, Robotics & Deep Learning]
 horizontal: false
 ---
