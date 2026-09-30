@@ -5,6 +5,7 @@ description: "Mask-RCNN model generalization across diverse commercial greenhous
 img: assets/img/tomato_greenhouse.jpg
 importance: 2
 category: "Agri-Food & Robotics"
+date: 2024-02-01
 doi: "https://doi.org/10.3390/agriculture14020173"
 html: "https://www.mdpi.com/2077-0472/14/2/173"
 pdf: "https://www.mdpi.com/2077-0472/14/2/173/pdf"

@@ -5,6 +5,7 @@ description: "In-situ factory optical inspection system completing full 360-degr
 img: assets/img/gear_inspection.png
 importance: 3
 category: "Industrial Inspection"
+date: 2023-10-10
 doi: "https://doi.org/10.3390/s23208541"
 html: "https://www.mdpi.com/1424-8220/23/20/8541"
 pdf: "https://www.mdpi.com/1424-8220/23/20/8541/pdf"

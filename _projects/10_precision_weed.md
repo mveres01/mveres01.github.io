@@ -1,9 +1,10 @@
 ---
 layout: page
-title: "Precision Weed Management in Commercial Crop Fields"
-description: "Autonomous targeted spraying and real-time computer vision weed localization strategies in Ontario field trials."
+title: "Autonomous Weed Scouting in Commercial Crop Fields"
+description: "High-throughput robotic scouting and deep learning weed localization to overcome the critical limitations of manual field inspection."
 img: assets/img/precision_weed_detection.jpg
-importance: 10
+date: 2024-04-12
+importance: 2
 category: "Agri-Food & Robotics"
 related_publications: true
 ---
@@ -12,19 +13,27 @@ related_publications: true
 
 ### Overview
 
-Traditional uniform herbicide spraying across agricultural acreage leads to excessive chemical use, environmental run-off, and accelerated resistance in weed populations. Precision weed management uses real-time computer vision and selective actuator nozzles to spray only target weed species.
+Effective weed management in commercial agriculture depends heavily on timely and precise field scouting. Traditional manual scouting techniques leave growers vulnerable to significant crop competition, excessive herbicide expenditure, and missed infestation windows.
 
-{% include figure.liquid loading="eager" path="assets/img/precision_weed_detection.jpg" title="Autonomous agricultural weed scouting rover in commercial crops" class="img-fluid rounded z-depth-1 mb-2" %}
+{% include figure.liquid loading="eager" path="assets/img/precision_weed_detection.jpg" title="Autonomous agricultural scouting platform (RoamIO-HCW) in commercial crop field" class="img-fluid rounded z-depth-1 mb-2" %}
 
 <div class="caption text-muted mb-4 text-center">
-  Autonomous field scouting and precision weed localization system operating across commercial crop rows under natural outdoor lighting conditions.
+  Autonomous high-clearance scouting platform (RoamIO-HCW) equipped with a multi-camera boom for automated crop row scanning and weed detection.
 </div>
 
-### Focus Areas
+### Scouting Challenges
 
-- **In-Field Localization:** Fast classification and bounding of broadleaf and grass weeds in commercial crop rows under varying ambient sunlight.
-- **Actuation & Timing:** Dynamic nozzle activation synchronized with ground speed and tractor/robot telemetry.
-- **Field Demonstration:** Presented and demonstrated at the Ontario Agricultural Robotics Working Group.
+Traditional scouting approaches face several fundamental bottlenecks:
+
+- **Limited Field Coverage:** Manual scouting only observes approximately 10% of the total acreage, leaving large portions of the field unmonitored.
+- **Vague & Subjective Reporting:** Manual scouting reports often rely on coarse, qualitative definitions of weed presence rather than standardized spatial metrics.
+- **Early-Stage Morphological Similarity:** Early weed seedlings share remarkably similar visual shapes and appearances with emergent crops, making visual discrimination difficult under varying field lighting and growth stages.
+
+### Research Focus
+
+- **Automated Row Scanning:** Deploying high-throughput camera rigs on autonomous rovers to provide comprehensive, full-field visual coverage.
+- **Deep Learning Localization:** Training robust convolutional neural networks to differentiate crop plants from look-alike weed seedlings at the earliest emergence stages.
+- **Field Demonstration:** Evaluated and presented at the Ontario Agricultural Robotics Working Group.
 
 <div class="project-actions mt-4 pt-3 border-top d-flex gap-2">
   <a href="https://www.agroboticswg.com/meetings/april-12-2024-meeting" target="_blank" class="btn btn-sm btn-outline-primary" role="button">Ag Robotics Presentation</a>

@@ -5,6 +5,7 @@ description: "Automated simulation platform for physical multi-fingered grasp-an
 img: assets/img/grasp_simulator.png
 importance: 8
 category: "Robotics & Deep Learning"
+date: 2017-02-01
 arxiv: "https://arxiv.org/abs/1702.02103"
 html: "https://arxiv.org/abs/1702.02103"
 pdf: "https://arxiv.org/pdf/1702.02103.pdf"

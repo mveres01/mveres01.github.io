@@ -5,6 +5,7 @@ description: "Wall-integrated multi-capacitance sensor paired with deep learning
 img: assets/img/two_phase_flow_system.jpg
 importance: 5
 category: "Industrial Inspection"
+date: 2026-07-27
 doi: "https://doi.org/10.1016/j.flowmeasinst.2025.103046"
 html: "https://doi.org/10.1016/j.flowmeasinst.2025.103046"
 pdf: "https://doi.org/10.1016/j.flowmeasinst.2025.103046"

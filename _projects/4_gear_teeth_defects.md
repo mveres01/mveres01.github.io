@@ -5,6 +5,7 @@ description: "Faster-RCNN defect detection coupled with physical geometric domai
 img: assets/img/gear_teeth_defects.png
 importance: 4
 category: "Industrial Inspection"
+date: 2021-12-14
 doi: "https://doi.org/10.3390/s21248480"
 html: "https://www.mdpi.com/1424-8220/21/24/8480"
 pdf: "https://www.mdpi.com/1424-8220/21/24/8480/pdf"
