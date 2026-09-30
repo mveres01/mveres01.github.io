@@ -65,23 +65,14 @@
       "startDate": "2009-09-01",
       "endDate": "2014-05-01",
       "courses": [],
-      "highlights": [
-        "Focus: Computer Engineering and Robotics"
-      ]
+      "highlights": ["Focus: Computer Engineering and Robotics"]
     }
   ],
   "skills": [
     {
       "name": "Machine Learning & AI",
       "level": "Expert",
-      "keywords": [
-        "Deep Learning",
-        "Computer Vision",
-        "Reinforcement Learning",
-        "Generative Models",
-        "Density Estimation",
-        "Few-Shot Learning"
-      ]
+      "keywords": ["Deep Learning", "Computer Vision", "Reinforcement Learning", "Generative Models", "Density Estimation", "Few-Shot Learning"]
     },
     {
       "name": "Robotics & Hardware",
@@ -98,15 +89,7 @@
     {
       "name": "Programming & Frameworks",
       "level": "Expert",
-      "keywords": [
-        "Python",
-        "PyTorch",
-        "TensorFlow",
-        "OpenCV",
-        "C++",
-        "Git",
-        "Linux / Bash"
-      ]
+      "keywords": ["Python", "PyTorch", "TensorFlow", "OpenCV", "C++", "Git", "Linux / Bash"]
     }
   ],
   "languages": [
@@ -118,12 +101,7 @@
   "interests": [
     {
       "name": "Applied Deep Learning",
-      "keywords": [
-        "Real-world deployment",
-        "Human-in-the-loop learning",
-        "Agricultural robotics",
-        "Industrial quality control"
-      ]
+      "keywords": ["Real-world deployment", "Human-in-the-loop learning", "Agricultural robotics", "Industrial quality control"]
     }
   ]
 }
