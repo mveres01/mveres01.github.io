@@ -1,7 +1,6 @@
 cv:
   name: Matthew Veres
   label: Research Engineer
-  email: matt.veres8@gmail.com
   location: Kitchener, Ontario, Canada
   image: "assets/img/prof_pic.jpg"
   summary: Research Engineer at the University of Guelph specializing in applied machine learning, computer vision, and robotics. Over a decade of experience designing and deploying end-to-end intelligent systems, ranging from sub-second micrometer industrial defect detection on factory floors to multi-spectral aerial/ground crop scouting in commercial agriculture. Deep expertise in PyTorch, deep reinforcement learning, and custom robotic data collection rigs.

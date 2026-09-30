@@ -17,39 +17,12 @@ toc:
       <span class="text-muted"><i class="fa-solid fa-location-dot me-1"></i> Kitchener &ndash; Ontario, Canada</span>
     </div>
     <div class="cv-contact-links">
-      <a href="mailto:matt.veres8@gmail.com" class="me-3 text-decoration-none"><i class="fa-solid fa-envelope me-1"></i> matt.veres8@gmail.com</a>
       <a href="https://www.linkedin.com/in/matthew-veres" target="_blank" class="me-3 text-decoration-none"><i class="fa-brands fa-linkedin me-1"></i> matthew-veres</a>
       <a href="https://github.com/mveres01" target="_blank" class="text-decoration-none"><i class="fa-brands fa-github me-1"></i> mveres01</a>
     </div>
   </div>
 </div>
 
-## Technical Skills
-
-<div class="cv-skills-table mb-4">
-  <table class="table table-borderless table-sm mb-0">
-    <tbody>
-      <tr>
-        <th scope="row" style="width: 18%;" class="ps-0 text-nowrap">Data Science</th>
-        <td>Machine Learning, Deep Learning, Data Analysis, Visualization</td>
-      </tr>
-      <tr>
-        <th scope="row" class="ps-0 text-nowrap">Programming</th>
-        <td>Python (advanced), JavaScript, Lua</td>
-      </tr>
-      <tr>
-        <th scope="row" class="ps-0 text-nowrap">Libraries</th>
-        <td>PyTorch, Pandas, Numpy, Scikit-Learn, Matplotlib, OpenCV, MLflow, MuJoCo</td>
-      </tr>
-      <tr>
-        <th scope="row" class="ps-0 text-nowrap">Languages</th>
-        <td>English (native), Korean (proficient, TOPIK level 5)</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
----
 
 ## Experience
 
@@ -190,23 +163,4 @@ toc:
   </li>
 </ol>
 
----
 
-## Education
-
-<div class="cv-edu-block mb-3">
-  <div class="d-flex justify-content-between align-items-baseline">
-    <h5 class="mb-1 font-weight-bold">MASc. in Engineering Systems &amp; Computing</h5>
-    <span class="badge cv-date-badge">2014 &ndash; 2016</span>
-  </div>
-  <p class="mb-1"><strong>University of Guelph</strong> &bull; <em>GPA: 3.93</em></p>
-  <p class="text-muted mb-0"><strong>Thesis Topic:</strong> Deep learning for multi-fingered robotic grasping, with offline training synthesis</p>
-</div>
-
-<div class="cv-edu-block mb-4 pt-2 border-top">
-  <div class="d-flex justify-content-between align-items-baseline">
-    <h5 class="mb-1 font-weight-bold">B.Eng. in Engineering Systems &amp; Computing</h5>
-    <span class="badge cv-date-badge">2009 &ndash; 2014</span>
-  </div>
-  <p class="mb-1"><strong>University of Guelph</strong> &bull; <em>GPA: 3.46</em></p>
-</div>

@@ -6,6 +6,7 @@ description: Open source machine learning and robotics code repositories.
 nav: true
 nav_order: 2
 ---
+<link rel="stylesheet" href="{{ '/assets/css/portfolio_custom.css' | relative_url }}">
 
 {% if site.data.repositories.github_repos %}
 <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">

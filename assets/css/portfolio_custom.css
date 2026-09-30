@@ -48,20 +48,19 @@ body.fixed-top-nav {
   background-color: var(--global-bg-color) !important;
 }
 
-/* Unpin footer from fixed bottom so it sits at bottom of page content */
-footer.fixed-bottom,
-footer {
-  position: relative !important;
-  bottom: auto !important;
-  left: auto !important;
-  right: auto !important;
-  width: 100% !important;
-  margin-top: 3.5rem !important;
-  border-top: 1px solid var(--global-divider-color) !important;
-  background-color: var(--global-bg-color) !important;
-  padding-top: 1.25rem !important;
-  padding-bottom: 1.25rem !important;
+/* Completely hide footer and webpage copyright per user specification */
+footer,
+footer[role="contentinfo"],
+footer.sticky-bottom,
+footer.fixed-bottom {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
 }
+
 
 /* --------------------------------------------------------------------------
    3. Navigation Bar & Heading Capitalization
