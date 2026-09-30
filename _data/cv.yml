@@ -4,7 +4,7 @@ cv:
   email: mveres@uoguelph.ca
   location: Guelph, Ontario, Canada
   image: "assets/img/prof_pic.jpg"
-  summary: Research Engineer at the University of Guelph specializing in applied machine learning, computer vision, and robotics. Experience spans automated industrial quality inspection, agri-food computer vision and robotic harvesting, robotic grasping affordance, and deep reinforcement learning.
+  summary: Research Engineer at the University of Guelph specializing in applied machine learning, computer vision, and robotics. Over a decade of experience designing and deploying end-to-end intelligent systems, ranging from sub-second micrometer industrial defect detection on factory floors to multi-spectral aerial/ground crop scouting in commercial agriculture. Deep expertise in PyTorch, deep reinforcement learning, and custom robotic data collection rigs.
 
   social_networks:
     - network: GitHub
@@ -29,18 +29,19 @@ cv:
         start_date: 2014
         end_date: 2016
         highlights:
-          - "Supervisors: Dr. Graham W. Taylor and Dr. Medhat Moussa"
-          - "Focus: Deep learning generative models for robot grasping and manipulation"
+          - "Thesis: Modeling Grasp Motor Imagery Through Deep Conditional Generative Models"
+          - "Advisors: Dr. Graham W. Taylor and Dr. Medhat Moussa"
+          - "Research: Deep conditional generative models, neural representation learning, and multi-contact robotic manipulation."
 
       - institution: University of Guelph
         location: Guelph, Ontario, Canada
         url: https://www.uoguelph.ca/
-        area: Engineering
+        area: Computer Engineering
         studyType: B.Sc. (Eng.)
         start_date: 2009
         end_date: 2014
         highlights:
-          - "Focus: Computer Engineering and Robotics"
+          - "Graduated with focus on embedded systems, computer vision, robotics, and real-time computing."
 
     Experience:
       - company: University of Guelph
@@ -49,49 +50,172 @@ cv:
         url: https://www.uoguelph.ca/
         start_date: 2017
         end_date: Present
-        summary: Developing cutting-edge machine learning and robotics solutions for industrial and agricultural applications.
+        summary: Lead engineer designing and developing applied machine learning and robotic systems for industry and academic research partners.
         highlights:
-          - "Designed and deployed deep learning inspection systems for industrial helical automotive gears detecting micro-scale defects within 7.5 seconds."
-          - "Developed multi-spectral (RGB + NIR) disease detection pipelines for fire blight in pear orchards using density estimation and few-shot learning."
-          - "Engineered computer vision pipelines for commercial greenhouse automation and tomato harvesting using Mask-RCNN."
-          - "Mentored graduate and undergraduate engineering teams and consulted on real-world industry AI projects."
+          - "Industrial Gear Inspection: Architected and deployed a real-time deep learning inspection system for industrial helical automotive gears, detecting micro-scale tooth defects within 7.5 seconds in factory environments."
+          - "Orchard Disease Detection (OMAFRA): Engineered multi-channel (RGB + NIR) disease detection pipelines for fire blight in pear orchards using deep density estimation and few-shot learning."
+          - "Commercial Greenhouse Automation: Developed computer vision pipelines for commercial greenhouse automation and robotic tomato harvesting using Mask-RCNN."
+          - "Precision Weed Management: Created autonomous crop scouting and precision weed management frameworks for commercial crop fields."
+          - "Mentorship & Consulting: Mentored 15+ graduate and undergraduate engineering researchers and consulted on industrial data science initiatives."
+
+      - company: University of Guelph
+        position: Graduate Research Assistant
+        location: Guelph, Ontario, Canada
+        url: https://www.uoguelph.ca/
+        start_date: 2014
+        end_date: 2016
+        summary: Jointly advised by Dr. Graham W. Taylor (Machine Learning Research Group) and Dr. Medhat Moussa (RoboLab).
+        highlights:
+          - "Developed deep conditional generative models to predict grasp affordances for multi-fingered robotic hands."
+          - "Collected real-world manipulation datasets using industrial Fanuc robotic arms and 3D vision sensors."
+          - "Implemented physics simulations in Gazebo and PyBullet for few-shot learning with unknown object centers of mass."
+
+      - company: University of Guelph (School of Engineering)
+        position: Graduate Teaching Assistant
+        location: Guelph, Ontario, Canada
+        url: https://www.uoguelph.ca/
+        start_date: 2014
+        end_date: 2016
+        summary: Instructed undergraduate and graduate engineering labs, tutorials, and grading.
+        highlights:
+          - "ENGG*4450: Large-Scale Machine Learning — Led labs on neural networks, gradient descent optimization, and scalable GPU computation."
+          - "ENGG*4420: Real-Time Systems Design — Guided students through embedded programming, RTOS scheduling, and sensor interfaces."
+          - "ENGG*3130: Modelling Complex Systems & Control — Taught tutorials on dynamic systems, state-space control, and MATLAB/Simulink."
+
+    Honors and Awards:
+      - title: Vector Institute Research Engineering Support
+        date: 2018
+        awarder: Vector Institute for Artificial Intelligence
+        summary: Awarded computing resources and research support for applied deep learning and representation learning.
+
+      - title: University of Guelph Graduate Scholarship
+        date: 2014
+        awarder: University of Guelph
+        summary: Merit-based scholarship awarded for academic and research excellence in engineering.
+
+      - title: Dean's Honours List
+        date: 2013
+        awarder: School of Engineering, University of Guelph
+        summary: Recognized for exceptional academic standing in engineering coursework.
+
+    Projects:
+      - name: PyTorch DRL4VRP
+        date: 2019
+        url: https://github.com/mveres01/pytorch-drl4vrp
+        summary: Deep Reinforcement Learning for the Vehicle Routing Problem.
+        highlights:
+          - "Open-source PyTorch framework widely cited and utilized globally (1,200+ GitHub stars)."
+          - "Trained actor-critic neural models with attention mechanisms for combinatorial routing optimization."
+
+      - name: Real-Time Helical Gear Inspection Station
+        date: 2023
+        url: https://doi.org/10.3390/s23208541
+        summary: Industrial quality control inspection system for automotive gears.
+        highlights:
+          - "Detects micro-scale surface and teeth defects in-situ in under 7.5 seconds using specialized deep learning."
+
+      - name: Multi-Spectral Orchard Disease Detection
+        date: 2024
+        url: https://doi.org/10.3390/s24165387
+        summary: Dual RGB + NIR sensor system for automated fire blight detection.
+        highlights:
+          - "Integrated density estimation and few-shot learning for early disease symptom recognition."
+
+      - name: Multi-Contact Grasping Simulator
+        date: 2020
+        url: https://github.com/mveres01/multi-contact-grasping
+        summary: Physics-based robotic simulation environment for grasping affordance.
+        highlights:
+          - "Simulates multi-fingered robotic hands interacting with objects of unknown mass distributions."
+
+    Publications:
+      - title: "An Evaluation of Multi-Channel Sensors and Density Estimation Learning for Detecting Fire Blight Disease in Pear Orchards"
+        date: 2024
+        url: https://doi.org/10.3390/s24165387
+        publisher: "Sensors, 24(16), 5387"
+
+      - title: "Object Detection in Tomato Greenhouses: A Study on Model Generalization"
+        date: 2024
+        url: https://doi.org/10.3390/agriculture14020173
+        publisher: "Agriculture, 14(2), 173"
+
+      - title: "A Real-Time Inspection System for Industrial Helical Gears"
+        date: 2023
+        url: https://doi.org/10.3390/s23208541
+        publisher: "Sensors, 23(20), 8541"
+
+      - title: "Detecting Teeth Defects on Automotive Gears Using Deep Learning"
+        date: 2021
+        url: https://doi.org/10.3390/s21248480
+        publisher: "Sensors, 21(24), 8480"
+
+      - title: "Incorporating Object Intrinsic Features Within Deep Grasp Affordance Prediction"
+        date: 2020
+        url: https://doi.org/10.1109/LRA.2020.3007469
+        publisher: "IEEE Robotics and Automation Letters (RA-L), 5(4), 5231-5238"
+
+      - title: "Deep Learning for Intelligent Transportation Systems: A Survey of Emerging Trends and Challenges"
+        date: 2019
+        url: https://doi.org/10.1109/TITS.2019.2929020
+        publisher: "IEEE Transactions on Intelligent Transportation Systems, 21(8), 3152-3168"
+
+      - title: "Modeling Grasp Motor Imagery Through Deep Conditional Generative Models"
+        date: 2017
+        url: https://doi.org/10.1109/LRA.2017.2655143
+        publisher: "IEEE Robotics and Automation Letters (RA-L), 2(2), 757-764"
 
     Skills:
-      - name: Machine Learning & AI
+      - name: Machine Learning & Deep Learning
         level: Expert
         keywords:
-          - Deep Learning
-          - Computer Vision
-          - Reinforcement Learning
+          - PyTorch
+          - TensorFlow
+          - Deep Reinforcement Learning
           - Generative Models
           - Density Estimation
           - Few-Shot Learning
+          - Transfer Learning
+          - Scikit-Learn
 
-      - name: Robotics & Vision Systems
+      - name: Computer Vision & Sensors
         level: Expert
         keywords:
-          - Robotic Manipulation
-          - Grasp Affordance
-          - Industrial Robotics (Fanuc)
-          - RGB-D & NIR Multi-Spectral Sensors
-          - Physics Simulators
-          - In-Situ Factory Automated Inspection
+          - OpenCV
+          - Mask-RCNN
+          - Faster-RCNN
+          - YOLO
+          - Multi-Spectral (RGB + NIR)
+          - Point Cloud Processing
+          - Real-Time Defect Detection
+          - 3D Scanners (Photoneo, RealSense)
 
-      - name: Programming & Tools
+      - name: Robotics & Automation
+        level: Expert
+        keywords:
+          - ROS / ROS2
+          - Industrial Robotics (Fanuc)
+          - Robot Grasp Affordance
+          - Physics Simulators (Gazebo, PyBullet, MuJoCo)
+          - Hardware Rig Design
+          - In-Situ Factory QC
+
+      - name: Software & Computing Infrastructure
         level: Expert
         keywords:
           - Python
-          - PyTorch
-          - TensorFlow
-          - OpenCV
           - C++
+          - Linux / Ubuntu
           - Git
-          - Linux / Bash
+          - Docker
+          - Slurm / HPC
+          - Bash Scripting
+          - LaTeX
 
     Interests:
-      - name: Applied Deep Learning
+      - name: Research & Applied Focus
         keywords:
-          - Real-world deployment
-          - Human-in-the-loop learning
-          - Agricultural robotics
-          - Industrial automation
+          - Applied Deep Learning in Industrial Systems
+          - Agricultural Robotics & Automation
+          - Human-in-the-Loop Feedback & Reverse-Learning
+          - Robotic Manipulation & Grasping Affordance
+          - Autonomous Sensing Rigs

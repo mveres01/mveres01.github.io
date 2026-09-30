@@ -1,0 +1,318 @@
+/* ==========================================================================
+   Custom Professional Academic Styles for Matthew Veres Portfolio
+   Overrides default spacing, bibliography clunkiness, button sizes, and CV layout.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Typography & General Layout Polish
+   -------------------------------------------------------------------------- */
+body {
+  line-height: 1.6;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.015em;
+  font-weight: 650;
+  line-height: 1.3;
+}
+
+p {
+  margin-bottom: 1rem;
+  line-height: 1.65;
+}
+
+/* --------------------------------------------------------------------------
+   2. Publications & Bibliography (Fix huge gaps, misaligned buttons, squished text)
+   -------------------------------------------------------------------------- */
+.publications ol.bibliography {
+  padding-left: 0;
+  margin-top: 1rem;
+}
+
+.publications ol.bibliography li {
+  margin-bottom: 1.75rem !important;
+  padding-bottom: 1.5rem !important;
+  border-bottom: 1px solid var(--global-divider-color) !important;
+  list-style: none;
+}
+
+.publications ol.bibliography li:last-child {
+  border-bottom: none !important;
+}
+
+/* Publication title */
+.publications ol.bibliography li .title {
+  font-size: 1.08rem !important;
+  font-weight: 700 !important;
+  line-height: 1.35 !important;
+  margin-bottom: 0.3rem !important;
+  color: var(--global-text-color) !important;
+}
+
+/* Publication authors */
+.publications ol.bibliography li .author {
+  font-size: 0.93rem !important;
+  line-height: 1.45 !important;
+  color: var(--global-text-color-light) !important;
+  margin-bottom: 0.3rem !important;
+}
+
+.publications ol.bibliography li .author em {
+  font-style: normal !important;
+  font-weight: 700 !important;
+  color: var(--global-text-color) !important;
+  border-bottom: 2px solid var(--global-theme-color) !important;
+  padding-bottom: 1px;
+}
+
+/* Publication journal / periodical */
+.publications ol.bibliography li .periodical {
+  font-size: 0.9rem !important;
+  line-height: 1.4 !important;
+  color: var(--global-text-color-light) !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.publications ol.bibliography li .periodical em {
+  font-style: italic !important;
+  color: var(--global-text-color) !important;
+}
+
+/* Thumbnail preview & venue badge */
+.publications ol.bibliography li .abbr {
+  margin-bottom: 0.5rem;
+}
+
+.publications ol.bibliography li .abbr abbr.badge {
+  display: inline-block !important;
+  width: auto !important;
+  min-width: 65px;
+  text-align: center;
+  padding: 0.25rem 0.65rem !important;
+  border-radius: 14px !important;
+  font-size: 0.72rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.3px;
+  margin-bottom: 0.5rem !important;
+}
+
+.publications ol.bibliography li figure {
+  margin-bottom: 0;
+}
+
+.publications ol.bibliography li .preview {
+  border-radius: 6px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+  max-width: 140px !important;
+  max-height: 110px !important;
+  object-fit: contain !important;
+  transition: transform 0.2s ease;
+}
+
+.publications ol.bibliography li .preview:hover {
+  transform: scale(1.02);
+}
+
+/* Uniform, sleek publication action buttons */
+.publications ol.bibliography li .links {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 6px !important;
+  margin-top: 0.5rem !important;
+}
+
+.publications ol.bibliography li .links a.btn,
+.publications ol.bibliography li .links .btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 52px !important;
+  height: 26px !important;
+  padding: 0 0.6rem !important;
+  font-size: 0.73rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.4px !important;
+  text-transform: uppercase !important;
+  border: 1px solid var(--global-divider-color) !important;
+  border-radius: 4px !important;
+  background-color: var(--global-card-bg-color) !important;
+  color: var(--global-text-color) !important;
+  text-decoration: none !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+  transition: all 0.15s ease-in-out !important;
+}
+
+.publications ol.bibliography li .links a.btn:hover,
+.publications ol.bibliography li .links .btn:hover {
+  border-color: var(--global-theme-color) !important;
+  color: var(--global-theme-color) !important;
+  background-color: rgba(var(--global-theme-color-rgb, 37, 99, 235), 0.06) !important;
+}
+
+/* Hide empty badges wrapper to prevent huge empty vertical gaps */
+.publications ol.bibliography li .badges {
+  display: none !important;
+}
+
+/* Abstract & BibTeX drawer dropdown styling */
+.publications ol.bibliography li .hidden {
+  background-color: var(--global-code-bg-color) !important;
+  border-left: 3px solid var(--global-theme-color) !important;
+  border-radius: 0 6px 6px 0 !important;
+  margin-top: 0.75rem !important;
+  padding: 0.75rem 1rem !important;
+}
+
+.publications ol.bibliography li .hidden p {
+  font-size: 0.9rem !important;
+  line-height: 1.55 !important;
+  margin: 0 !important;
+  color: var(--global-text-color) !important;
+}
+
+/* --------------------------------------------------------------------------
+   3. CV Section (Executive Clean Layout, Eliminate Clunky Box Cards & Red Badges)
+   -------------------------------------------------------------------------- */
+.cv {
+  margin-top: 0.5rem;
+}
+
+/* Strip clunky card wrappers */
+.cv .card {
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+  margin-top: 2.2rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+/* Refined section headers */
+.cv .card-title {
+  font-size: 1.28rem !important;
+  font-weight: 700 !important;
+  color: var(--global-text-color) !important;
+  border-bottom: 2px solid var(--global-theme-color) !important;
+  padding-bottom: 0.45rem !important;
+  margin-bottom: 1.2rem !important;
+  display: flex !important;
+  align-items: center !important;
+  letter-spacing: -0.01em !important;
+}
+
+/* Replace jarring red badges with sleek modern badges */
+.cv .badge.danger-color-dark {
+  background-color: var(--global-theme-color) !important;
+  color: #ffffff !important;
+  font-size: 0.76rem !important;
+  font-weight: 600 !important;
+  padding: 0.3rem 0.65rem !important;
+  border-radius: 4px !important;
+  letter-spacing: 0.3px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Clean list item rows */
+.cv .list-group-item {
+  border: none !important;
+  background: transparent !important;
+  padding: 0.95rem 0 !important;
+  border-bottom: 1px solid var(--global-divider-color) !important;
+}
+
+.cv .list-group-item:last-child {
+  border-bottom: none !important;
+}
+
+.cv h6.title {
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  color: var(--global-text-color) !important;
+  margin-bottom: 0.25rem !important;
+  line-height: 1.35 !important;
+}
+
+.cv h6.title a {
+  color: var(--global-text-color) !important;
+  text-decoration: none !important;
+}
+
+.cv h6.title a:hover {
+  color: var(--global-theme-color) !important;
+}
+
+.cv h6 {
+  line-height: 1.4 !important;
+  margin-bottom: 0.25rem !important;
+}
+
+.cv ul.items {
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.25rem !important;
+  padding-left: 1.25rem !important;
+}
+
+.cv ul.items li {
+  margin-bottom: 0.35rem !important;
+  line-height: 1.5 !important;
+  font-size: 0.93rem !important;
+  color: var(--global-text-color) !important;
+}
+
+/* Contact table */
+.cv table.table-cv {
+  width: 100%;
+}
+
+.cv table.table-cv td {
+  padding: 0.35rem 0.5rem !important;
+}
+
+/* Skills items pills / highlights */
+.cv .skill-item,
+.cv .interest-item {
+  padding: 0.5rem 0 !important;
+  line-height: 1.55 !important;
+  font-size: 0.95rem !important;
+  border-bottom: 1px dashed var(--global-divider-color);
+}
+
+.cv .skill-item:last-child,
+.cv .interest-item:last-child {
+  border-bottom: none;
+}
+
+/* Location and metadata icons */
+.cv .location {
+  font-size: 0.82rem !important;
+  color: var(--global-text-color-light) !important;
+  margin-top: 0.35rem !important;
+}
+
+.cv .iconlocation {
+  margin-right: 0.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   4. About / Home Page Polish
+   -------------------------------------------------------------------------- */
+.profile {
+  margin-bottom: 1.5rem;
+}
+
+.profile img {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1) !important;
+}
+
+.profile .more-info {
+  margin-top: 0.75rem;
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.profile .more-info p {
+  margin-bottom: 0.15rem;
+}
