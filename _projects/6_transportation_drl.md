@@ -5,6 +5,10 @@ description: "Comprehensive survey and open-source PyTorch implementation of dee
 img: assets/img/transportation_vrp.png
 importance: 6
 category: "Robotics & Deep Learning"
+doi: "https://doi.org/10.1109/TITS.2019.2929020"
+html: "https://ieeexplore.ieee.org/document/8771378"
+pdf: "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8771378"
+code: "https://github.com/mveres01/pytorch-drl4vrp"
 related_publications: true
 ---
 

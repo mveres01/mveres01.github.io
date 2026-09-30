@@ -335,72 +335,101 @@ ninja-keys {
 }
 
 /* --------------------------------------------------------------------------
-   6. Projects Tab Streamlining (Modern, clean, balanced cards)
+   6. Projects Tab Streamlining (Compact, clean, responsive cards)
    -------------------------------------------------------------------------- */
 .projects h2.category {
-  font-size: 1.25rem !important;
+  font-size: 1.15rem !important;
   font-weight: 700 !important;
   color: var(--global-text-color) !important;
   border-bottom: 2px solid var(--global-theme-color) !important;
-  padding-bottom: 0.4rem !important;
-  margin-top: 2rem !important;
-  margin-bottom: 1.2rem !important;
+  padding-bottom: 0.35rem !important;
+  margin-top: 1.8rem !important;
+  margin-bottom: 1rem !important;
   text-transform: capitalize !important;
 }
 
-.projects .row-cols-md-2 > div {
-  display: flex !important;
+.project-compact-card {
+  border: 1px solid var(--global-divider-color);
+  border-radius: 6px;
+  background-color: var(--global-card-bg-color);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  overflow: hidden;
 }
 
-.projects .card {
-  display: flex !important;
-  flex-direction: column !important;
-  width: 100% !important;
-  border: 1px solid var(--global-divider-color) !important;
-  border-radius: 8px !important;
-  background-color: var(--global-card-bg-color) !important;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04) !important;
-  transition: transform 0.15s ease, box-shadow 0.15s ease !important;
-  overflow: hidden !important;
-  margin-bottom: 0 !important;
+.project-compact-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
 }
 
-.projects .card:hover {
-  transform: translateY(-2px) !important;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08) !important;
+.project-thumb-container {
+  height: 120px;
+  width: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-bottom: 1px solid var(--global-divider-color);
 }
 
-.projects .card img {
-  border-top-left-radius: 8px !important;
-  border-top-right-radius: 8px !important;
-  height: 180px !important;
-  object-fit: cover !important;
-  width: 100% !important;
-  background-color: rgba(0, 0, 0, 0.02);
+.project-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.2s ease;
 }
 
-.projects .card .card-body {
-  padding: 1.1rem 1.25rem !important;
-  display: flex !important;
-  flex-direction: column !important;
-  flex-grow: 1 !important;
+.project-compact-card:hover .project-thumb-img {
+  transform: scale(1.02);
 }
 
-.projects .card .card-title {
-  font-size: 1.05rem !important;
-  font-weight: 700 !important;
-  margin-bottom: 0.4rem !important;
+.project-title {
+  font-size: 0.96rem !important;
+  font-weight: 650 !important;
   line-height: 1.35 !important;
-  color: var(--global-text-color) !important;
 }
 
-.projects .card .card-text {
-  font-size: 0.88rem !important;
-  line-height: 1.5 !important;
-  color: var(--global-text-color-light) !important;
-  margin-bottom: 0.75rem !important;
-  flex-grow: 1 !important;
+.project-desc {
+  font-size: 0.83rem !important;
+  line-height: 1.45 !important;
 }
+
+.project-links {
+  gap: 5px !important;
+}
+
+.project-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 38px !important;
+  height: 22px !important;
+  padding: 0 0.45rem !important;
+  font-size: 0.68rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.3px !important;
+  text-transform: uppercase !important;
+  border: 1px solid var(--global-divider-color) !important;
+  border-radius: 3px !important;
+  background-color: var(--global-bg-color) !important;
+  color: var(--global-text-color) !important;
+  text-decoration: none !important;
+  transition: all 0.15s ease-in-out !important;
+}
+
+.project-btn:hover {
+  border-color: var(--global-theme-color) !important;
+  color: var(--global-theme-color) !important;
+  background-color: rgba(var(--global-theme-color-rgb, 37, 99, 235), 0.06) !important;
+}
+
+.project-btn-details {
+  border-color: rgba(var(--global-theme-color-rgb, 37, 99, 235), 0.3) !important;
+  color: var(--global-theme-color) !important;
+}
+
+.repo-card {
+  border-left: 3px solid var(--global-theme-color) !important;
+}
+
 
 /* --------------------------------------------------------------------------
    7. CV Styling

@@ -5,6 +5,9 @@ description: "Multi-channel RGB and NIR sensing with density estimation learning
 img: assets/img/fire_blight.png
 importance: 1
 category: "Agri-Food & Robotics"
+doi: "https://doi.org/10.3390/s24165387"
+html: "https://www.mdpi.com/1424-8220/24/16/5387"
+pdf: "https://www.mdpi.com/1424-8220/24/16/5387/pdf"
 related_publications: true
 ---
 

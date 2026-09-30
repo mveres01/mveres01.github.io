@@ -12,7 +12,7 @@ profile:
     <p class="font-weight-bold mb-0">School of Engineering</p>
     <p class="text-muted mb-0">University of Guelph</p>
 
-selected_papers: true # includes a list of papers marked as "selected={true}"
+selected_papers: false # removed publications from about page
 social: true # includes social icons at the bottom of the page
 
 announcements:

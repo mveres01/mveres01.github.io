@@ -5,6 +5,9 @@ description: "Deep conditional generative models for generating diverse, multimo
 img: assets/img/motor_imagery.png
 importance: 7
 category: "Robotics & Deep Learning"
+doi: "https://doi.org/10.1109/LRA.2017.2650153"
+html: "https://ieeexplore.ieee.org/abstract/document/7814247"
+pdf: "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7814247"
 related_publications: true
 ---
 

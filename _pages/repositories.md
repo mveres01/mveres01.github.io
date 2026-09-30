@@ -3,8 +3,7 @@ layout: page
 permalink: /repositories/
 title: Repositories
 description: Open source machine learning and robotics code repositories.
-nav: true
-nav_order: 2
+nav: false
 ---
 <link rel="stylesheet" href="{{ '/assets/css/portfolio_custom.css' | relative_url }}">
 

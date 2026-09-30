@@ -5,6 +5,9 @@ description: "Automated quality inspection and bud localization system using rad
 img: assets/img/bud_detection.png
 importance: 9
 category: "Agri-Food & Robotics"
+doi: "https://doi.org/10.1109/CRV.2014.15"
+html: "https://ieeexplore.ieee.org/document/6816863"
+pdf: "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6816863"
 related_publications: true
 ---
 

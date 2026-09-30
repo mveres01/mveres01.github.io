@@ -5,6 +5,9 @@ description: "Few-shot robotic grasp affordance learning considering unknown mas
 img: assets/img/grasp_affordance.png
 importance: 5
 category: "Robotics & Deep Learning"
+doi: "https://doi.org/10.1109/LRA.2020.3007469"
+html: "https://ieeexplore.ieee.org/abstract/document/9144383"
+pdf: "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9144383"
 related_publications: true
 ---
 

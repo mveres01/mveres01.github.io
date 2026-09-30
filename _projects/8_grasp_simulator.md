@@ -5,6 +5,10 @@ description: "Automated simulation platform for physical multi-fingered grasp-an
 img: assets/img/grasp_simulator.png
 importance: 8
 category: "Robotics & Deep Learning"
+arxiv: "https://arxiv.org/abs/1702.02103"
+html: "https://arxiv.org/abs/1702.02103"
+pdf: "https://arxiv.org/pdf/1702.02103.pdf"
+code: "https://github.com/mveres01/multi-contact-grasping"
 related_publications: true
 ---
 

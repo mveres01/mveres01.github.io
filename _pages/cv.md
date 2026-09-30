@@ -3,7 +3,7 @@ layout: page
 permalink: /cv/
 title: CV
 nav: true
-nav_order: 1
+nav_order: 2
 description: Machine Learning Research Engineer &bull; Curriculum Vitae
 toc:
   sidebar: left
