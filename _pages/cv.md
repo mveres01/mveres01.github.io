@@ -12,10 +12,7 @@ toc:
 <link rel="stylesheet" href="{{ '/assets/css/portfolio_custom.css' | relative_url }}">
 
 <div class="cv-header mb-4 pb-2 border-bottom">
-  <div class="d-flex flex-wrap justify-content-between align-items-center">
-    <div>
-      <span class="text-muted"><i class="fa-solid fa-location-dot me-1"></i> Kitchener &ndash; Ontario, Canada</span>
-    </div>
+  <div class="d-flex flex-wrap justify-content-end align-items-center">
     <div class="cv-contact-links">
       <a href="https://www.linkedin.com/in/matthew-veres" target="_blank" class="me-3 text-decoration-none"><i class="fa-brands fa-linkedin me-1"></i> matthew-veres</a>
       <a href="https://github.com/mveres01" target="_blank" class="text-decoration-none"><i class="fa-brands fa-github me-1"></i> mveres01</a>

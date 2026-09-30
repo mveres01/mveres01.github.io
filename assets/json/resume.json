@@ -3,11 +3,8 @@
     "name": "Matthew Veres",
     "label": "Research Engineer",
     "image": "assets/img/prof_pic.jpg",
-    "email": "mveres@uoguelph.ca",
     "summary": "Research Engineer at the University of Guelph specializing in applied machine learning, computer vision, and robotics. Experience spans automated industrial quality inspection, agri-food computer vision and robotic harvesting, robotic grasping affordance, and deep reinforcement learning.",
     "location": {
-      "address": "School of Engineering, University of Guelph",
-      "postalCode": "N1G 2W1",
       "city": "Guelph",
       "countryCode": "CA",
       "region": "Ontario"
