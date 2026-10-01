@@ -1,0 +1,1096 @@
+/* ==========================================================================
+   Custom Professional Academic Styles for Matthew Veres Portfolio
+   Overrides default spacing, bibliography clunkiness, button sizes, CV,
+   navigation, scrolling behavior, and projects layout.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Typography & Global Spacing
+   -------------------------------------------------------------------------- */
+body {
+  line-height: 1.6;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: -0.015em;
+  font-weight: 650;
+  line-height: 1.3;
+}
+
+p {
+  margin-bottom: 0.9rem;
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   2. Disable Persistent / Fixed Headers and Footers Across Scrolling
+   -------------------------------------------------------------------------- */
+/* Unpin navbar from fixed top so it scrolls naturally with the page */
+body.fixed-top-nav {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+#navbar.fixed-top,
+.navbar.fixed-top,
+.navbar {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  width: 100% !important;
+  z-index: 100 !important;
+  box-shadow: none !important;
+  border-bottom: 1px solid var(--global-divider-color) !important;
+  padding-top: 0.85rem !important;
+  padding-bottom: 0.85rem !important;
+  background-color: var(--global-bg-color) !important;
+}
+
+/* Completely hide footer and webpage copyright per user specification */
+footer,
+footer[role="contentinfo"],
+footer.sticky-bottom,
+footer.fixed-bottom {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   3. Navigation Bar: Responsive Top Navigation & Heading Capitalization
+   -------------------------------------------------------------------------- */
+@layer components {
+  /* Ensure navbar container handles brand and navigation buttons cleanly */
+  .navbar > .container {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+
+  .navbar-brand {
+    font-weight: 700 !important;
+    font-size: 1.15rem !important;
+    letter-spacing: -0.015em !important;
+    color: var(--global-text-color) !important;
+  }
+
+  /* If navbar has no brand element (e.g. on home page), render Matthew Veres title brand */
+  .navbar > .container:not(:has(.navbar-brand))::before {
+    content: "Matthew Veres";
+    font-weight: 700;
+    font-size: 1.15rem;
+    letter-spacing: -0.015em;
+    color: var(--global-text-color);
+    white-space: nowrap;
+  }
+
+  /* Ensure top navigation buttons always render and stay visible across all devices */
+  .navbar-toggler {
+    display: none !important;
+  }
+
+  #navbarNav,
+  .navbar-collapse,
+  .navbar-collapse.collapse {
+    display: flex !important;
+    visibility: visible !important;
+    flex-basis: auto !important;
+    width: auto !important;
+    flex-grow: 0 !important;
+    margin-left: auto !important;
+  }
+
+  .navbar-nav {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+    gap: 0.25rem !important;
+  }
+
+  .navbar-nav .nav-item {
+    margin: 0 !important;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 0.92rem !important;
+    font-weight: 550 !important;
+    padding: 0.35rem 0.75rem !important;
+    color: var(--global-text-color) !important;
+    text-transform: capitalize !important;
+    text-decoration: none !important;
+    border-radius: 4px;
+    white-space: nowrap !important;
+    transition:
+      color 0.15s ease-in-out,
+      background-color 0.15s ease-in-out;
+  }
+
+  .navbar-nav .nav-link:hover {
+    color: var(--global-theme-color) !important;
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+
+  .navbar-nav .nav-item.active .nav-link {
+    color: var(--global-theme-color) !important;
+    font-weight: 650 !important;
+  }
+
+  /* Mobile specific tuning for top navigation buttons */
+  @media (max-width: 575.98px) {
+    #navbar,
+    .navbar {
+      padding-top: 0.65rem !important;
+      padding-bottom: 0.65rem !important;
+    }
+
+    .navbar > .container {
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+      justify-content: space-between !important;
+    }
+
+    .navbar-brand,
+    .navbar > .container:not(:has(.navbar-brand))::before {
+      font-size: 1.02rem !important;
+      margin-right: 0.35rem !important;
+    }
+
+    .navbar-nav {
+      gap: 0.15rem !important;
+    }
+
+    .navbar-nav .nav-link {
+      font-size: 0.88rem !important;
+      padding: 0.3rem 0.5rem !important;
+    }
+  }
+}
+
+/* Fallback unlayered rules */
+.navbar-toggler {
+  display: none !important;
+}
+#navbarNav,
+.navbar-collapse,
+.navbar-collapse.collapse {
+  display: flex !important;
+  visibility: visible !important;
+  flex-basis: auto !important;
+  width: auto !important;
+  margin-left: auto !important;
+}
+.navbar-nav {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+}
+
+/* Reading position progress bar: sleek accent line directly beneath navbar */
+#progress {
+  display: block !important;
+  width: 100% !important;
+  height: 2.5px !important;
+  border: none !important;
+  background-color: transparent !important;
+  color: var(--global-theme-color) !important;
+}
+
+#progress::-webkit-progress-bar {
+  background-color: transparent !important;
+}
+
+#progress::-webkit-progress-value {
+  background-color: var(--global-theme-color) !important;
+}
+
+#progress::-moz-progress-bar {
+  background-color: var(--global-theme-color) !important;
+}
+
+.progress-container {
+  background-color: transparent !important;
+}
+
+.progress-bar {
+  background-color: var(--global-theme-color) !important;
+}
+
+/* Ensure consistent Title Case on all section headings */
+.post article > h2,
+.post article > h3 {
+  text-transform: capitalize !important;
+  margin-top: 1.75rem !important;
+  margin-bottom: 0.9rem !important;
+}
+
+/* Transform lowercase 'news' link into clean 'News' heading */
+.post article > h2:has(a[href*="news"]) a,
+.post article > h2 a[href*="news"] {
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none !important;
+  color: var(--global-text-color) !important;
+  visibility: hidden;
+  position: relative;
+  font-size: 1.35rem !important;
+  font-weight: 700 !important;
+}
+
+.post article > h2:has(a[href*="news"]) a::after,
+.post article > h2 a[href*="news"]::after {
+  content: "News";
+  visibility: visible;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: 700;
+  color: var(--global-text-color) !important;
+}
+
+/* Transform lowercase 'selected publications' into clean 'Publications' heading */
+.post article > h2:has(a[href*="publications"]) a,
+.post article > h2 a[href*="publications"] {
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none !important;
+  color: var(--global-text-color) !important;
+  visibility: hidden;
+  position: relative;
+  font-size: 1.35rem !important;
+  font-weight: 700 !important;
+}
+
+.post article > h2:has(a[href*="publications"]) a::after,
+.post article > h2 a[href*="publications"]::after {
+  content: "Publications";
+  visibility: visible;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: 700;
+  color: var(--global-text-color) !important;
+}
+
+/* --------------------------------------------------------------------------
+   4. Profile Picture & About Page Optimization
+   -------------------------------------------------------------------------- */
+.profile {
+  max-width: 150px !important;
+  float: right !important;
+  margin: 0 0 1rem 2rem !important;
+  text-align: center !important;
+}
+
+.profile img {
+  width: 140px !important;
+  height: 140px !important;
+  max-width: 140px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  border: 3px solid var(--global-card-bg-color) !important;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08) !important;
+}
+
+.profile .more-info {
+  margin-top: 0.5rem;
+  font-size: 0.84rem;
+  line-height: 1.35;
+  color: var(--global-text-color-light);
+}
+
+.profile .more-info p {
+  margin-bottom: 0.1rem;
+}
+
+/* Ensure headings clear float so text doesn't awkwardly hug under the photo */
+.post article > h2,
+.post article > h3 {
+  clear: both !important;
+}
+
+/* Hide useless light/dark toggle and CTRL-K search */
+#light-toggle,
+.toggle-container,
+#search-toggle,
+ninja-keys {
+  display: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   5. Publications Layout (Clean, Tight Academic Citation Style)
+   -------------------------------------------------------------------------- */
+.publications ol.bibliography {
+  padding-left: 0;
+  margin-top: 0.5rem;
+}
+
+.publications ol.bibliography li {
+  margin-bottom: 0.75rem !important;
+  padding-bottom: 0.75rem !important;
+  border-bottom: 1px solid var(--global-divider-color) !important;
+  list-style: none;
+}
+
+.publications ol.bibliography li:last-child {
+  border-bottom: none !important;
+}
+
+/* Publication title */
+.publications ol.bibliography li .title {
+  font-size: 1rem !important;
+  font-weight: 650 !important;
+  line-height: 1.35 !important;
+  margin-bottom: 0.15rem !important;
+  color: var(--global-text-color) !important;
+}
+
+/* Publication authors */
+.publications ol.bibliography li .author {
+  font-size: 0.88rem !important;
+  line-height: 1.35 !important;
+  color: var(--global-text-color-light) !important;
+  margin-bottom: 0.15rem !important;
+}
+
+.publications ol.bibliography li .author em {
+  font-style: normal !important;
+  font-weight: 650 !important;
+  color: var(--global-text-color) !important;
+  border-bottom: 1.5px solid var(--global-theme-color) !important;
+  padding-bottom: 1px;
+}
+
+/* Publication journal / periodical */
+.publications ol.bibliography li .periodical {
+  font-size: 0.85rem !important;
+  line-height: 1.3 !important;
+  color: var(--global-text-color-light) !important;
+  margin-bottom: 0.25rem !important;
+}
+
+.publications ol.bibliography li .periodical em {
+  font-style: italic !important;
+  color: var(--global-text-color) !important;
+}
+
+/* Completely hide descriptions and abstract drawers */
+.publications ol.bibliography li .abstract,
+.publications ol.bibliography li .abstract.hidden {
+  display: none !important;
+}
+
+/* Completely hide journal badges over image */
+.publications ol.bibliography li .abbr,
+.publications ol.bibliography li .abbr abbr.badge,
+.abbr abbr.badge,
+.badge.abbr {
+  display: none !important;
+}
+
+/* Hide empty abbr column if no thumbnail exists */
+.publications ol.bibliography li .col.abbr:not(:has(figure, img)) {
+  display: none !important;
+}
+
+.publications ol.bibliography li .col-sm-8 {
+  flex: 1 1 auto !important;
+  max-width: 100% !important;
+}
+
+/* Compact thumbnail preview */
+.publications ol.bibliography li figure {
+  margin-bottom: 0;
+}
+
+.publications ol.bibliography li .preview {
+  border-radius: 4px !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06) !important;
+  border: 1px solid var(--global-divider-color) !important;
+  max-width: 95px !important;
+  max-height: 70px !important;
+  object-fit: contain !important;
+  background-color: var(--global-card-bg-color);
+}
+
+/* Completely hide bibtex buttons and redundant Abs button */
+.publications ol.bibliography li .links a.bibtex,
+.publications ol.bibliography li .links .bibtex,
+.publications ol.bibliography li .bibtex.hidden,
+.publications ol.bibliography li .links a.abstract {
+  display: none !important;
+}
+
+/* Uniform, compact publication action buttons */
+.publications ol.bibliography li .links {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 5px !important;
+  margin-top: 0.25rem !important;
+}
+
+.publications ol.bibliography li .links a.btn,
+.publications ol.bibliography li .links .btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 42px !important;
+  height: 22px !important;
+  padding: 0 0.5rem !important;
+  font-size: 0.7rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.3px !important;
+  text-transform: uppercase !important;
+  border: 1px solid var(--global-divider-color) !important;
+  border-radius: 3px !important;
+  background-color: var(--global-card-bg-color) !important;
+  color: var(--global-text-color) !important;
+  text-decoration: none !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+  transition: all 0.15s ease-in-out !important;
+}
+
+.publications ol.bibliography li .links a.btn:hover,
+.publications ol.bibliography li .links .btn:hover {
+  border-color: var(--global-theme-color) !important;
+  color: var(--global-theme-color) !important;
+  background-color: rgba(var(--global-theme-color-rgb, 37, 99, 235), 0.06) !important;
+}
+
+/* Hide empty badges wrapper */
+.publications ol.bibliography li .badges {
+  display: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   6. Projects Layout (Modern Responsive Grid, Uniform Images & Whitespace)
+   -------------------------------------------------------------------------- */
+/* Major Project Areas & Topics Delineation */
+.project-category-section {
+  margin-top: 3.75rem;
+  margin-bottom: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--global-divider-color);
+}
+
+.projects > .project-category-section:first-of-type {
+  margin-top: 1rem;
+  padding-top: 0;
+  border-top: none;
+}
+
+.project-category-header {
+  margin-bottom: 1.75rem;
+}
+
+.project-category-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--global-theme-color);
+  background-color: rgba(var(--global-theme-color-rgb, 37, 99, 235), 0.08);
+  border: 1px solid rgba(var(--global-theme-color-rgb, 37, 99, 235), 0.22);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  margin-bottom: 0.65rem;
+}
+
+.project-category-title {
+  font-size: 1.75rem !important;
+  font-weight: 750 !important;
+  letter-spacing: -0.025em !important;
+  color: var(--global-text-color) !important;
+  margin: 0 0 0.85rem 0 !important;
+  line-height: 1.25 !important;
+}
+
+.project-category-divider {
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--global-theme-color) 0%, rgba(var(--global-theme-color-rgb, 37, 99, 235), 0.3) 60%, transparent 100%);
+  border-radius: 3px;
+}
+
+/* 2-Column Responsive Card Grid */
+.project-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.75rem;
+  margin-top: 1rem;
+  margin-bottom: 2.75rem;
+  align-items: stretch;
+}
+
+@media (max-width: 768px) {
+  .project-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* Professional Showcase Card */
+.project-showcase-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--global-card-bg-color);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+  height: 100%;
+}
+
+.project-showcase-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  border-color: rgba(var(--global-theme-color-rgb, 37, 99, 235), 0.35);
+}
+
+/* Fixed-Height Uniform Image Container */
+.project-card-image-box {
+  width: 100%;
+  height: 180px;
+  min-height: 180px;
+  max-height: 180px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.02);
+  border-bottom: 1px solid var(--global-divider-color);
+  position: relative;
+  display: block;
+}
+
+.project-card-image-box a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.project-card-img {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 180px !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transition: transform 0.3s ease;
+}
+
+.project-showcase-card:hover .project-card-img {
+  transform: scale(1.03);
+}
+
+/* Card Content Area with Ample Whitespace */
+.project-card-info {
+  padding: 1.35rem 1.25rem 1.15rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  background-color: var(--global-card-bg-color);
+}
+
+.project-card-title {
+  font-size: 1.02rem !important;
+  font-weight: 650 !important;
+  line-height: 1.38 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0.65rem !important;
+  letter-spacing: -0.01em !important;
+}
+
+.project-card-title a {
+  color: var(--global-text-color) !important;
+  text-decoration: none !important;
+  transition: color 0.15s ease-in-out;
+}
+
+.project-card-title a:hover {
+  color: var(--global-theme-color) !important;
+}
+
+.project-card-description {
+  font-size: 0.88rem !important;
+  line-height: 1.55 !important;
+  color: var(--global-text-color-light) !important;
+  margin-bottom: 1.25rem !important;
+  flex-grow: 1;
+}
+
+/* Action Links & Badges at Bottom */
+.project-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-top: auto;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--global-divider-color);
+}
+
+.p-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 24px !important;
+  padding: 0 0.55rem !important;
+  font-size: 0.7rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.3px !important;
+  text-transform: uppercase !important;
+  border: 1px solid var(--global-divider-color) !important;
+  border-radius: 3px !important;
+  background-color: var(--global-bg-color) !important;
+  color: var(--global-text-color) !important;
+  text-decoration: none !important;
+  line-height: 1 !important;
+  transition: all 0.15s ease-in-out !important;
+}
+
+.p-btn:hover {
+  border-color: var(--global-theme-color) !important;
+  color: var(--global-theme-color) !important;
+  background-color: rgba(var(--global-theme-color-rgb, 37, 99, 235), 0.08) !important;
+}
+
+.p-btn-more {
+  border-color: rgba(var(--global-theme-color-rgb, 37, 99, 235), 0.35) !important;
+  color: var(--global-theme-color) !important;
+  font-weight: 650 !important;
+  margin-left: auto;
+}
+
+.p-btn-more:hover {
+  background-color: var(--global-theme-color) !important;
+  color: #fff !important;
+}
+
+/* Repositories Grid */
+.repo-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 1rem;
+  margin-bottom: 3.5rem;
+}
+
+@media (max-width: 900px) {
+  .repo-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
+.repo-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.25rem;
+  background-color: var(--global-card-bg-color);
+  border: 1px solid var(--global-divider-color);
+  border-left: 3.5px solid var(--global-theme-color) !important;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  height: 100%;
+}
+
+.repo-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.07);
+}
+
+.repo-card-title {
+  font-size: 0.98rem !important;
+  font-weight: 700 !important;
+  margin: 0 !important;
+}
+
+.repo-card-title a {
+  color: var(--global-text-color) !important;
+  text-decoration: none !important;
+}
+
+.repo-card-title a:hover {
+  color: var(--global-theme-color) !important;
+}
+
+.repo-card-desc {
+  font-size: 0.84rem !important;
+  line-height: 1.5 !important;
+  color: var(--global-text-color-light) !important;
+  margin-top: 0.5rem !important;
+  margin-bottom: 1.15rem !important;
+  flex-grow: 1;
+}
+
+.repo-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--global-divider-color);
+}
+
+/* Individual Project Detail Pages Polish */
+.post header.post-header {
+  margin-bottom: 2rem !important;
+  border-bottom: 1px solid var(--global-divider-color) !important;
+  padding-bottom: 1.25rem !important;
+}
+
+.post header.post-header .post-title {
+  font-size: 1.85rem !important;
+  font-weight: 700 !important;
+  color: var(--global-text-color) !important;
+  margin-bottom: 0.5rem !important;
+  letter-spacing: -0.02em !important;
+}
+
+.post header.post-header .post-description {
+  font-size: 1.05rem !important;
+  line-height: 1.55 !important;
+  color: var(--global-text-color-light) !important;
+  margin: 0 !important;
+}
+
+.post article h3 {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  margin-top: 2.2rem !important;
+  margin-bottom: 0.85rem !important;
+  color: var(--global-text-color) !important;
+}
+
+.post article p {
+  font-size: 0.95rem !important;
+  line-height: 1.65 !important;
+  color: var(--global-text-color) !important;
+  margin-bottom: 1.25rem !important;
+}
+
+.post article figure {
+  margin: 1.75rem 0 !important;
+  text-align: center;
+}
+
+.post article figure img {
+  max-width: 100% !important;
+  max-height: 480px !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+  border-radius: 8px !important;
+  border: 1px solid var(--global-divider-color) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06) !important;
+  margin: 0 auto !important;
+}
+
+.post article .caption {
+  font-size: 0.86rem !important;
+  line-height: 1.45 !important;
+  color: var(--global-text-color-light) !important;
+  margin-top: 0.75rem !important;
+  text-align: center !important;
+}
+
+.post article ul {
+  padding-left: 1.35rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.post article ul li {
+  font-size: 0.93rem !important;
+  line-height: 1.6 !important;
+  margin-bottom: 0.45rem !important;
+  color: var(--global-text-color) !important;
+}
+
+.post article .project-actions {
+  margin-top: 2rem !important;
+  padding-top: 1.25rem !important;
+  border-top: 1px solid var(--global-divider-color) !important;
+  display: flex !important;
+  gap: 0.65rem !important;
+  flex-wrap: wrap !important;
+}
+
+.post article .project-actions .btn {
+  font-size: 0.78rem !important;
+  font-weight: 600 !important;
+  padding: 0.35rem 0.85rem !important;
+  border-radius: 4px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.3px !important;
+  text-decoration: none !important;
+}
+
+/* Hide empty references block if no citations exist */
+.post h2:has(+ .publications:empty),
+.post h2:has(+ div.publications:empty),
+.post .publications:empty {
+  display: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   7. CV Styling
+   -------------------------------------------------------------------------- */
+.cv-header {
+  font-size: 0.92rem;
+}
+
+.cv-contact-links a {
+  color: var(--global-text-color-light);
+  transition: color 0.15s ease-in-out;
+}
+
+.cv-contact-links a:hover {
+  color: var(--global-theme-color);
+}
+
+.cv-skills-table table th {
+  font-weight: 650;
+  color: var(--global-text-color);
+  font-size: 0.92rem;
+  padding-top: 0.35rem;
+  padding-bottom: 0.35rem;
+}
+
+.cv-skills-table table td {
+  color: var(--global-text-color);
+  font-size: 0.92rem;
+  padding-top: 0.35rem;
+  padding-bottom: 0.35rem;
+}
+
+.cv-experience-block h5 {
+  font-size: 1.08rem;
+  letter-spacing: -0.01em;
+}
+
+.cv-subproject h6 {
+  font-size: 0.96rem;
+  line-height: 1.4;
+  color: var(--global-text-color);
+}
+
+.cv-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  padding: 0.12rem 0.5rem;
+  border-radius: 4px;
+  background-color: rgba(var(--global-theme-color-rgb, 37, 99, 235), 0.08);
+  color: var(--global-theme-color);
+  border: 1px solid rgba(var(--global-theme-color-rgb, 37, 99, 235), 0.2);
+  margin-right: 0.4rem;
+  vertical-align: middle;
+}
+
+.cv-date-badge {
+  font-size: 0.78rem !important;
+  font-weight: 600 !important;
+  padding: 0.2rem 0.5rem !important;
+  border-radius: 4px !important;
+  background-color: var(--global-code-bg-color) !important;
+  color: var(--global-text-color) !important;
+  border: 1px solid var(--global-divider-color) !important;
+  letter-spacing: 0.2px;
+}
+
+.cv-list {
+  margin-top: 0.3rem;
+  margin-bottom: 0.6rem;
+  padding-left: 1.25rem;
+}
+
+.cv-list li {
+  font-size: 0.91rem;
+  line-height: 1.5;
+  margin-bottom: 0.25rem;
+  color: var(--global-text-color);
+}
+
+.cv-numbered-list {
+  padding-left: 1.35rem;
+}
+
+.cv-numbered-list li {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  margin-bottom: 0.75rem;
+  color: var(--global-text-color);
+}
+
+.cv-edu-block h5 {
+  font-size: 1.05rem;
+}
+
+.cv-edu-block p {
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+/* --------------------------------------------------------------------------
+   8. Mobile CV TOC & Swipe Navigation Enhancements
+   -------------------------------------------------------------------------- */
+@media (max-width: 767.98px) {
+  /* Give a clean, prominent gap between the TOC sections and the CV header */
+  .col-sm-3:has(#toc-sidebar),
+  #toc-sidebar {
+    margin-bottom: 2.25rem !important;
+  }
+
+  #toc-sidebar {
+    position: static !important;
+    background-color: var(--global-card-bg-color, rgba(0, 0, 0, 0.02));
+    border: 1px solid var(--global-divider-color);
+    border-radius: 12px;
+    padding: 0.75rem 0.85rem !important;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  }
+
+  #toc-sidebar::before {
+    content: "Sections";
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #64748b;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Render the sections horizontally as modern pills instead of plain newlines */
+  #toc-sidebar .toc-list {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 0.5rem !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    list-style: none !important;
+    border-left: none !important;
+  }
+
+  #toc-sidebar .toc-list-item {
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+  }
+
+  #toc-sidebar .toc-link {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0.38rem 0.95rem !important;
+    font-size: 0.84rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.01em !important;
+    color: #334155 !important;
+    background-color: #f8fafc !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 9999px !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    transition: all 0.2s ease-in-out !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04) !important;
+    height: auto !important;
+  }
+
+  #toc-sidebar .toc-link::before {
+    display: none !important; /* Hide tocbot default left vertical indicator */
+  }
+
+  #toc-sidebar .toc-link:hover {
+    color: #0f172a !important;
+    border-color: #94a3b8 !important;
+    background-color: #f1f5f9 !important;
+  }
+
+  #toc-sidebar .toc-link.is-active-link,
+  #toc-sidebar .toc-link.cv-pill-active,
+  #toc-sidebar .toc-list-item.is-active-li > .toc-link {
+    background-color: #0f172a !important;
+    color: #ffffff !important;
+    border-color: #0f172a !important;
+    font-weight: 700 !important;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.25) !important;
+  }
+
+  /* Ensure touch gestures pan vertically natively while letting JS handle horizontal page swipe */
+  body,
+  .post,
+  .post-content,
+  article,
+  #toc-sidebar {
+    touch-action: pan-y pinch-zoom !important;
+  }
+
+  /* Toast indicator for mobile swipe page navigation */
+  .page-swipe-toast,
+  .cv-swipe-toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background-color: rgba(30, 41, 59, 0.94);
+    color: #ffffff;
+    padding: 0.55rem 1.35rem;
+    border-radius: 9999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    pointer-events: none;
+    opacity: 0;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 9999;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    backdrop-filter: blur(8px);
+    white-space: nowrap;
+  }
+
+  .page-swipe-toast.visible,
+  .cv-swipe-toast.visible {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* Hide redundant CV page header */
+.post:has(.cv-header) .post-header {
+  display: none !important;
+}
