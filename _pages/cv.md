@@ -20,9 +20,9 @@ toc:
   </div>
 </div>
 
-<div class="cv-tab-section active" id="tab-experience" data-tab-index="0">
+<div class="cv-tab-section active" id="tab-experience" data-tab-index="0" markdown="1">
 
-## Experience
+<h2 id="experience">Experience</h2>
 
 <div class="cv-experience-block mb-4">
   <div class="d-flex justify-content-between align-items-baseline">
@@ -116,9 +116,9 @@ toc:
 
 </div>
 
-<div class="cv-tab-section" id="tab-publications" data-tab-index="1">
+<div class="cv-tab-section" id="tab-publications" data-tab-index="1" markdown="1">
 
-## Publications
+<h2 id="publications">Publications</h2>
 
 <ol class="cv-numbered-list mb-4">
   <li>
@@ -155,9 +155,9 @@ toc:
 
 </div>
 
-<div class="cv-tab-section" id="tab-preprints" data-tab-index="2">
+<div class="cv-tab-section" id="tab-preprints" data-tab-index="2" markdown="1">
 
-## Preprints
+<h2 id="preprints">Preprints</h2>
 
 <ol class="cv-numbered-list mb-4">
   <li>
@@ -241,6 +241,23 @@ toc:
   function setupTocControls() {
     const toc = document.getElementById("toc-sidebar");
     if (!toc) return;
+
+    let list = toc.querySelector(".toc-list");
+    if (!list) {
+      list = document.createElement("ul");
+      list.className = "toc-list";
+      tabIds.forEach((id, idx) => {
+        const li = document.createElement("li");
+        li.className = "toc-list-item" + (idx === currentTabIndex ? " is-active-li" : "");
+        const a = document.createElement("a");
+        a.className = "toc-link" + (idx === currentTabIndex ? " cv-pill-active is-active-link" : "");
+        a.href = "#" + id;
+        a.textContent = tabTitles[idx];
+        li.appendChild(a);
+        list.appendChild(li);
+      });
+      toc.appendChild(list);
+    }
 
     if (!document.getElementById("cv-section-arrows")) {
       const navControls = document.createElement("div");
