@@ -38,3 +38,5 @@ I’m a Machine Learning Engineer and Researcher focused on computer vision, rob
 ### Background & Opportunities
 
 I speak English (native) and Korean (TOPIK Level 5). I'm open to roles in Canada or South Korea (as well as global opportunities that bridge the two).
+
+<script src="{{ '/assets/js/mobile-page-swipe.js' | relative_url | bust_file_cache }}"></script>

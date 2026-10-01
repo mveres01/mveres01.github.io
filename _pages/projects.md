@@ -124,3 +124,5 @@ display_categories: [Robotics and Deep Learning, Agri-Food & Robotics, Industria
     </div>
   </div>
 </div>
+
+<script src="{{ '/assets/js/mobile-page-swipe.js' | relative_url | bust_file_cache }}"></script>

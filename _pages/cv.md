@@ -20,9 +20,7 @@ toc:
   </div>
 </div>
 
-<div class="cv-tab-section active" id="tab-experience" data-tab-index="0" markdown="1">
-
-<h2 id="experience">Experience</h2>
+## Experience
 
 <div class="cv-experience-block mb-4">
   <div class="d-flex justify-content-between align-items-baseline">
@@ -114,11 +112,9 @@ toc:
   </div>
 </div>
 
-</div>
+<hr>
 
-<div class="cv-tab-section" id="tab-publications" data-tab-index="1" markdown="1">
-
-<h2 id="publications">Publications</h2>
+## Publications
 
 <ol class="cv-numbered-list mb-4">
   <li>
@@ -153,11 +149,9 @@ toc:
   </li>
 </ol>
 
-</div>
+<hr>
 
-<div class="cv-tab-section" id="tab-preprints" data-tab-index="2" markdown="1">
-
-<h2 id="preprints">Preprints</h2>
+## Preprints
 
 <ol class="cv-numbered-list mb-4">
   <li>
@@ -165,275 +159,4 @@ toc:
   </li>
 </ol>
 
-</div>
-
-<div id="cv-toast" class="cv-swipe-toast"></div>
-
-<script>
-(function () {
-  const tabIds = ["experience", "publications", "preprints"];
-  const tabTitles = ["Experience", "Publications", "Preprints"];
-  let currentTabIndex = 0;
-  let toastTimer = null;
-
-  function showToast(text) {
-    const toast = document.getElementById("cv-toast");
-    if (!toast) return;
-    toast.innerHTML = text;
-    toast.classList.add("visible");
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => {
-      toast.classList.remove("visible");
-    }, 1500);
-  }
-
-  function updateActivePill(activeId) {
-    document.querySelectorAll("#toc-sidebar .toc-link").forEach((link) => {
-      const href = link.getAttribute("href");
-      if (href === "#" + activeId) {
-        link.classList.add("cv-pill-active");
-        link.classList.add("is-active-link");
-        link.parentElement?.classList.add("is-active-li");
-      } else {
-        link.classList.remove("cv-pill-active");
-        link.classList.remove("is-active-link");
-        link.parentElement?.classList.remove("is-active-li");
-      }
-    });
-  }
-
-  function switchToTab(index, shouldScroll = true) {
-    if (index < 0 || index >= tabIds.length) return;
-    currentTabIndex = index;
-    const targetId = tabIds[index];
-
-    if (window.innerWidth < 768) {
-      document.querySelectorAll(".cv-tab-section").forEach((sec, idx) => {
-        if (idx === index) {
-          sec.classList.add("active");
-        } else {
-          sec.classList.remove("active");
-        }
-      });
-
-      updateActivePill(targetId);
-
-      if (shouldScroll) {
-        const toc = document.getElementById("toc-sidebar");
-        const navHeight = document.querySelector("#navbar")?.offsetHeight || 60;
-        const targetY = toc ? toc.getBoundingClientRect().top + window.pageYOffset - navHeight - 12 : 0;
-        if (window.pageYOffset > targetY + 30) {
-          window.scrollTo({ top: Math.max(0, targetY), behavior: "smooth" });
-        }
-      }
-
-      showToast(`<i class="fa-solid fa-layer-group me-1"></i> ${tabTitles[index]} (${index + 1}/${tabIds.length})`);
-    } else {
-      const targetEl = document.getElementById(targetId);
-      if (targetEl) {
-        const navHeight = document.querySelector("#navbar")?.offsetHeight || 60;
-        const targetY = targetEl.getBoundingClientRect().top + window.pageYOffset - navHeight - 16;
-        window.scrollTo({ top: Math.max(0, targetY), behavior: "smooth" });
-      }
-    }
-  }
-
-  function setupTocControls() {
-    const toc = document.getElementById("toc-sidebar");
-    if (!toc) return;
-
-    let list = toc.querySelector(".toc-list");
-    if (!list) {
-      list = document.createElement("ul");
-      list.className = "toc-list";
-      tabIds.forEach((id, idx) => {
-        const li = document.createElement("li");
-        li.className = "toc-list-item" + (idx === currentTabIndex ? " is-active-li" : "");
-        const a = document.createElement("a");
-        a.className = "toc-link" + (idx === currentTabIndex ? " cv-pill-active is-active-link" : "");
-        a.href = "#" + id;
-        a.textContent = tabTitles[idx];
-        li.appendChild(a);
-        list.appendChild(li);
-      });
-      toc.appendChild(list);
-    }
-
-    if (!document.getElementById("cv-section-arrows")) {
-      const navControls = document.createElement("div");
-      navControls.id = "cv-section-arrows";
-      navControls.className = "cv-section-arrows";
-      navControls.innerHTML = `
-        <button type="button" class="cv-arrow-btn" id="cv-prev-btn" aria-label="Previous section"><i class="fa-solid fa-chevron-left me-1"></i> Prev</button>
-        <button type="button" class="cv-arrow-btn" id="cv-next-btn" aria-label="Next section">Next <i class="fa-solid fa-chevron-right ms-1"></i></button>
-      `;
-      toc.appendChild(navControls);
-
-      document.getElementById("cv-prev-btn")?.addEventListener("click", function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        if (currentTabIndex > 0) {
-          switchToTab(currentTabIndex - 1);
-        } else {
-          showToast(`<i class="fa-solid fa-check me-1"></i> First section: ${tabTitles[0]}`);
-        }
-      });
-
-      document.getElementById("cv-next-btn")?.addEventListener("click", function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        if (currentTabIndex < tabIds.length - 1) {
-          switchToTab(currentTabIndex + 1);
-        } else {
-          showToast(`<i class="fa-solid fa-check me-1"></i> Last section: ${tabTitles[tabIds.length - 1]}`);
-        }
-      });
-    }
-
-    if (window.innerWidth < 768) {
-      switchToTab(currentTabIndex, false);
-    }
-  }
-
-  // Intercept clicks on TOC links for instant mobile tab switching
-  document.addEventListener(
-    "click",
-    function (e) {
-      const link = e.target.closest("#toc-sidebar .toc-link");
-      if (link) {
-        const href = link.getAttribute("href");
-        if (href && href.startsWith("#")) {
-          const id = href.substring(1);
-          const idx = tabIds.indexOf(id);
-          if (idx !== -1 && window.innerWidth < 768) {
-            e.preventDefault();
-            e.stopPropagation();
-            switchToTab(idx);
-          }
-        }
-      }
-    },
-    true
-  );
-
-  // Swipe Gesture Engine (triggers immediately when threshold crossed)
-  let touchStartX = 0;
-  let touchStartY = 0;
-  let touchLastX = 0;
-  let touchLastY = 0;
-  let touchStartTime = 0;
-  let isTracking = false;
-  let swipeTriggered = false;
-
-  function onTouchStart(e) {
-    if (window.innerWidth >= 768) return;
-    const pt = e.touches ? e.touches[0] : e;
-    touchStartX = pt.clientX;
-    touchStartY = pt.clientY;
-    touchLastX = touchStartX;
-    touchLastY = touchStartY;
-    touchStartTime = Date.now();
-    isTracking = true;
-    swipeTriggered = false;
-  }
-
-  function onTouchMove(e) {
-    if (!isTracking || window.innerWidth >= 768) return;
-    const pt = e.touches ? e.touches[0] : e;
-    touchLastX = pt.clientX;
-    touchLastY = pt.clientY;
-
-    const deltaX = touchLastX - touchStartX;
-    const deltaY = touchLastY - touchStartY;
-    const absX = Math.abs(deltaX);
-    const absY = Math.abs(deltaY);
-
-    // Instant trigger when user slides finger >= 48px horizontally
-    if (!swipeTriggered && absX >= 48 && absX > absY * 1.25) {
-      swipeTriggered = true;
-      if (deltaX < 0) {
-        // Swipe Left -> Next Section
-        if (currentTabIndex < tabIds.length - 1) {
-          switchToTab(currentTabIndex + 1);
-        } else {
-          showToast(`<i class="fa-solid fa-check me-1"></i> Last section: ${tabTitles[currentTabIndex]}`);
-        }
-      } else {
-        // Swipe Right -> Previous Section
-        if (currentTabIndex > 0) {
-          switchToTab(currentTabIndex - 1);
-        } else {
-          showToast(`<i class="fa-solid fa-check me-1"></i> First section: ${tabTitles[0]}`);
-        }
-      }
-    }
-  }
-
-  function onTouchEnd() {
-    if (!isTracking || window.innerWidth >= 768) return;
-    isTracking = false;
-
-    if (!swipeTriggered) {
-      const deltaX = touchLastX - touchStartX;
-      const deltaY = touchLastY - touchStartY;
-      const absX = Math.abs(deltaX);
-      const absY = Math.abs(deltaY);
-      const duration = Date.now() - touchStartTime;
-
-      // Quick flick detection (30px if under 400ms)
-      if (duration < 400 && absX >= 30 && absX > absY * 1.2) {
-        swipeTriggered = true;
-        if (deltaX < 0) {
-          if (currentTabIndex < tabIds.length - 1) {
-            switchToTab(currentTabIndex + 1);
-          } else {
-            showToast(`<i class="fa-solid fa-check me-1"></i> Last section: ${tabTitles[currentTabIndex]}`);
-          }
-        } else {
-          if (currentTabIndex > 0) {
-            switchToTab(currentTabIndex - 1);
-          } else {
-            showToast(`<i class="fa-solid fa-check me-1"></i> First section: ${tabTitles[0]}`);
-          }
-        }
-      }
-    }
-  }
-
-  window.addEventListener("touchstart", onTouchStart, { passive: true });
-  window.addEventListener("touchmove", onTouchMove, { passive: true });
-  window.addEventListener("touchend", onTouchEnd, { passive: true });
-  window.addEventListener("touchcancel", onTouchEnd, { passive: true });
-
-  window.addEventListener("resize", function () {
-    if (window.innerWidth >= 768) {
-      document.querySelectorAll(".cv-tab-section").forEach((sec) => {
-        sec.classList.remove("active");
-        sec.style.display = "block";
-      });
-    } else {
-      document.querySelectorAll(".cv-tab-section").forEach((sec, idx) => {
-        sec.style.display = "";
-        if (idx === currentTabIndex) {
-          sec.classList.add("active");
-        } else {
-          sec.classList.remove("active");
-        }
-      });
-      updateActivePill(tabIds[currentTabIndex]);
-    }
-  });
-
-  // Watch for tocbot injection into #toc-sidebar
-  const tocTarget = document.getElementById("toc-sidebar");
-  if (tocTarget) {
-    const observer = new MutationObserver(() => {
-      setupTocControls();
-    });
-    observer.observe(tocTarget, { childList: true, subtree: true });
-  }
-
-  // Backup timers to ensure controls setup
-  [100, 300, 600, 1000].forEach((delay) => setTimeout(setupTocControls, delay));
-})();
-</script>
+<script src="{{ '/assets/js/mobile-page-swipe.js' | relative_url | bust_file_cache }}"></script>

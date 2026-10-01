@@ -1048,84 +1048,25 @@ ninja-keys {
     box-shadow: 0 2px 6px rgba(15, 23, 42, 0.25) !important;
   }
 
-  /* Ensure touch gestures pan vertically natively while letting JS handle horizontal swipe */
+  /* Ensure touch gestures pan vertically natively while letting JS handle horizontal page swipe */
   body,
   .post,
   .post-content,
   article,
-  .cv-tab-section,
   #toc-sidebar {
     touch-action: pan-y pinch-zoom !important;
   }
 
-  /* Section arrows and header controls */
-  .cv-section-arrows {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    margin-top: 0.65rem;
-    padding-top: 0.5rem;
-    border-top: 1px dashed var(--global-divider-color, #e2e8f0);
-    width: 100%;
-    justify-content: flex-end;
-  }
-
-  .cv-arrow-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.25rem 0.65rem;
-    border-radius: 6px;
-    border: 1px solid var(--global-divider-color, #cbd5e1);
-    background-color: #ffffff;
-    color: #334155;
-    font-size: 0.75rem;
-    font-weight: 600;
-    cursor: pointer;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
-    transition: all 0.15s ease-in-out;
-  }
-
-  .cv-arrow-btn:active {
-    background-color: #0f172a;
-    color: #ffffff;
-    border-color: #0f172a;
-  }
-
-  /* Mobile Tabbed View for CV sections */
-  .cv-tab-section {
-    display: none;
-    animation: cvTabFadeIn 0.22s ease-out;
-  }
-
-  .cv-tab-section.active {
-    display: block !important;
-  }
-
-  @keyframes cvTabFadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(6px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .cv-tab-divider {
-    display: none !important;
-  }
-
-  /* Temporary toast indicator for mobile swipe */
+  /* Toast indicator for mobile swipe page navigation */
+  .page-swipe-toast,
   .cv-swipe-toast {
     position: fixed;
     bottom: 2rem;
     left: 50%;
     transform: translateX(-50%) translateY(20px);
-    background-color: rgba(30, 41, 59, 0.92);
+    background-color: rgba(30, 41, 59, 0.94);
     color: #ffffff;
-    padding: 0.5rem 1.25rem;
+    padding: 0.55rem 1.35rem;
     border-radius: 9999px;
     font-size: 0.85rem;
     font-weight: 600;
@@ -1134,21 +1075,17 @@ ninja-keys {
     opacity: 0;
     transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 9999;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
     display: flex;
     align-items: center;
     gap: 0.5rem;
     backdrop-filter: blur(8px);
+    white-space: nowrap;
   }
 
+  .page-swipe-toast.visible,
   .cv-swipe-toast.visible {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
-  }
-}
-
-@media (min-width: 768px) {
-  .cv-tab-section {
-    display: block !important;
   }
 }
