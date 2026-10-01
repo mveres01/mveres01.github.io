@@ -1039,6 +1039,7 @@ ninja-keys {
   }
 
   #toc-sidebar .toc-link.is-active-link,
+  #toc-sidebar .toc-link.cv-pill-active,
   #toc-sidebar .toc-list-item.is-active-li > .toc-link {
     background-color: #0f172a !important;
     color: #ffffff !important;
@@ -1050,7 +1051,9 @@ ninja-keys {
   /* Ensure touch gestures pan vertically natively while letting JS handle horizontal swipe */
   body,
   .post,
+  .post-content,
   article,
+  .cv-tab-section,
   #toc-sidebar {
     touch-action: pan-y pinch-zoom !important;
   }
@@ -1089,6 +1092,31 @@ ninja-keys {
     border-color: #0f172a;
   }
 
+  /* Mobile Tabbed View for CV sections */
+  .cv-tab-section {
+    display: none;
+    animation: cvTabFadeIn 0.22s ease-out;
+  }
+
+  .cv-tab-section.active {
+    display: block !important;
+  }
+
+  @keyframes cvTabFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .cv-tab-divider {
+    display: none !important;
+  }
+
   /* Temporary toast indicator for mobile swipe */
   .cv-swipe-toast {
     position: fixed;
@@ -1116,5 +1144,11 @@ ninja-keys {
   .cv-swipe-toast.visible {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
+  }
+}
+
+@media (min-width: 768px) {
+  .cv-tab-section {
+    display: block !important;
   }
 }

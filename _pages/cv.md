@@ -20,6 +20,8 @@ toc:
   </div>
 </div>
 
+<div class="cv-tab-section active" id="tab-experience" data-tab-index="0">
+
 ## Experience
 
 <div class="cv-experience-block mb-4">
@@ -112,7 +114,9 @@ toc:
   </div>
 </div>
 
----
+</div>
+
+<div class="cv-tab-section" id="tab-publications" data-tab-index="1">
 
 ## Publications
 
@@ -149,7 +153,9 @@ toc:
   </li>
 </ol>
 
----
+</div>
+
+<div class="cv-tab-section" id="tab-preprints" data-tab-index="2">
 
 ## Preprints
 
@@ -159,18 +165,17 @@ toc:
   </li>
 </ol>
 
+</div>
+
 <div id="cv-toast" class="cv-swipe-toast"></div>
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-  const sectionIds = ["experience", "publications", "preprints"];
-  const sectionTitles = {
-    experience: "Experience",
-    publications: "Publications",
-    preprints: "Preprints"
-  };
-
+(function () {
+  const tabIds = ["experience", "publications", "preprints"];
+  const tabTitles = ["Experience", "Publications", "Preprints"];
+  let currentTabIndex = 0;
   let toastTimer = null;
+
   function showToast(text) {
     const toast = document.getElementById("cv-toast");
     if (!toast) return;
@@ -182,201 +187,236 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 1500);
   }
 
-  function getCurrentSectionIndex() {
-    const scrollY = window.pageYOffset || document.documentElement.scrollTop;
-    if (window.innerHeight + scrollY >= document.documentElement.scrollHeight - 60) {
-      return sectionIds.length - 1;
-    }
-    const nav = document.querySelector("#navbar");
-    const navHeight = nav ? nav.offsetHeight : 60;
-    let bestIndex = 0;
-    for (let i = 0; i < sectionIds.length; i++) {
-      const el = document.getElementById(sectionIds[i]);
-      if (el) {
-        const rect = el.getBoundingClientRect();
-        if (rect.top <= navHeight + window.innerHeight * 0.4) {
-          bestIndex = i;
-        }
-      }
-    }
-    return bestIndex;
-  }
-
   function updateActivePill(activeId) {
     document.querySelectorAll("#toc-sidebar .toc-link").forEach((link) => {
       const href = link.getAttribute("href");
       if (href === "#" + activeId) {
+        link.classList.add("cv-pill-active");
         link.classList.add("is-active-link");
+        link.parentElement?.classList.add("is-active-li");
       } else {
+        link.classList.remove("cv-pill-active");
         link.classList.remove("is-active-link");
+        link.parentElement?.classList.remove("is-active-li");
       }
     });
   }
 
-  function navigateToSection(index) {
-    if (index < 0 || index >= sectionIds.length) return;
-    const targetId = sectionIds[index];
-    const targetEl = document.getElementById(targetId);
-    if (!targetEl) return;
+  function switchToTab(index, shouldScroll = true) {
+    if (index < 0 || index >= tabIds.length) return;
+    currentTabIndex = index;
+    const targetId = tabIds[index];
 
-    const nav = document.querySelector("#navbar");
-    const navHeight = nav ? nav.offsetHeight : 60;
-    const targetY = targetEl.getBoundingClientRect().top + window.pageYOffset - navHeight - 16;
+    if (window.innerWidth < 768) {
+      document.querySelectorAll(".cv-tab-section").forEach((sec, idx) => {
+        if (idx === index) {
+          sec.classList.add("active");
+        } else {
+          sec.classList.remove("active");
+        }
+      });
 
-    window.scrollTo({
-      top: Math.max(0, targetY),
-      behavior: "smooth"
-    });
+      updateActivePill(targetId);
 
-    updateActivePill(targetId);
-    showToast(`<i class="fa-solid fa-arrow-right-arrow-left"></i> ${sectionTitles[targetId]} (${index + 1}/${sectionIds.length})`);
+      if (shouldScroll) {
+        const toc = document.getElementById("toc-sidebar");
+        const navHeight = document.querySelector("#navbar")?.offsetHeight || 60;
+        const targetY = toc ? toc.getBoundingClientRect().top + window.pageYOffset - navHeight - 12 : 0;
+        if (window.pageYOffset > targetY + 30) {
+          window.scrollTo({ top: Math.max(0, targetY), behavior: "smooth" });
+        }
+      }
+
+      showToast(`<i class="fa-solid fa-layer-group me-1"></i> ${tabTitles[index]} (${index + 1}/${tabIds.length})`);
+    } else {
+      const targetEl = document.getElementById(targetId);
+      if (targetEl) {
+        const navHeight = document.querySelector("#navbar")?.offsetHeight || 60;
+        const targetY = targetEl.getBoundingClientRect().top + window.pageYOffset - navHeight - 16;
+        window.scrollTo({ top: Math.max(0, targetY), behavior: "smooth" });
+      }
+    }
   }
 
-  // Setup Next / Prev chevron buttons in TOC on mobile
   function setupTocControls() {
     const toc = document.getElementById("toc-sidebar");
     if (!toc) return;
 
-    const existingNav = document.getElementById("cv-section-arrows");
-    if (existingNav) return;
+    if (!document.getElementById("cv-section-arrows")) {
+      const navControls = document.createElement("div");
+      navControls.id = "cv-section-arrows";
+      navControls.className = "cv-section-arrows";
+      navControls.innerHTML = `
+        <button type="button" class="cv-arrow-btn" id="cv-prev-btn" aria-label="Previous section"><i class="fa-solid fa-chevron-left me-1"></i> Prev</button>
+        <button type="button" class="cv-arrow-btn" id="cv-next-btn" aria-label="Next section">Next <i class="fa-solid fa-chevron-right ms-1"></i></button>
+      `;
+      toc.appendChild(navControls);
 
-    const navControls = document.createElement("div");
-    navControls.id = "cv-section-arrows";
-    navControls.className = "cv-section-arrows";
-    navControls.innerHTML = `
-      <button type="button" class="cv-arrow-btn" id="cv-prev-btn" aria-label="Previous section"><i class="fa-solid fa-chevron-left"></i></button>
-      <button type="button" class="cv-arrow-btn" id="cv-next-btn" aria-label="Next section"><i class="fa-solid fa-chevron-right"></i></button>
-    `;
-    toc.appendChild(navControls);
+      document.getElementById("cv-prev-btn")?.addEventListener("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (currentTabIndex > 0) {
+          switchToTab(currentTabIndex - 1);
+        } else {
+          showToast(`<i class="fa-solid fa-check me-1"></i> First section: ${tabTitles[0]}`);
+        }
+      });
 
-    document.getElementById("cv-prev-btn")?.addEventListener("click", () => {
-      const current = getCurrentSectionIndex();
-      if (current > 0) {
-        navigateToSection(current - 1);
-      } else {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-        showToast(`<i class="fa-solid fa-arrow-up"></i> Top of CV`);
-      }
-    });
+      document.getElementById("cv-next-btn")?.addEventListener("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (currentTabIndex < tabIds.length - 1) {
+          switchToTab(currentTabIndex + 1);
+        } else {
+          showToast(`<i class="fa-solid fa-check me-1"></i> Last section: ${tabTitles[tabIds.length - 1]}`);
+        }
+      });
+    }
 
-    document.getElementById("cv-next-btn")?.addEventListener("click", () => {
-      const current = getCurrentSectionIndex();
-      if (current < sectionIds.length - 1) {
-        navigateToSection(current + 1);
-      } else {
-        showToast(`<i class="fa-solid fa-check"></i> Last section: ${sectionTitles[sectionIds[current]]}`);
-      }
-    });
+    if (window.innerWidth < 768) {
+      switchToTab(currentTabIndex, false);
+    }
   }
 
-  // Allow clicking directly on TOC pills with smooth scroll & feedback
-  document.addEventListener("click", function (e) {
-    const link = e.target.closest("#toc-sidebar .toc-link");
-    if (link) {
-      const href = link.getAttribute("href");
-      if (href && href.startsWith("#")) {
-        const id = href.substring(1);
-        const idx = sectionIds.indexOf(id);
-        if (idx !== -1) {
-          e.preventDefault();
-          navigateToSection(idx);
+  // Intercept clicks on TOC links for instant mobile tab switching
+  document.addEventListener(
+    "click",
+    function (e) {
+      const link = e.target.closest("#toc-sidebar .toc-link");
+      if (link) {
+        const href = link.getAttribute("href");
+        if (href && href.startsWith("#")) {
+          const id = href.substring(1);
+          const idx = tabIds.indexOf(id);
+          if (idx !== -1 && window.innerWidth < 768) {
+            e.preventDefault();
+            e.stopPropagation();
+            switchToTab(idx);
+          }
         }
       }
-    }
-  });
+    },
+    true
+  );
 
-  // Touch Swipe Engine (captures during touchmove and ends gracefully on touchcancel/touchend)
+  // Swipe Gesture Engine (triggers immediately when threshold crossed)
   let touchStartX = 0;
   let touchStartY = 0;
   let touchLastX = 0;
   let touchLastY = 0;
   let touchStartTime = 0;
-  let isTouching = false;
-  let swipeHandled = false;
+  let isTracking = false;
+  let swipeTriggered = false;
 
-  document.addEventListener(
-    "touchstart",
-    function (e) {
-      if (e.touches && e.touches.length === 1) {
-        touchStartX = e.touches[0].clientX;
-        touchStartY = e.touches[0].clientY;
-        touchLastX = touchStartX;
-        touchLastY = touchStartY;
-        touchStartTime = Date.now();
-        isTouching = true;
-        swipeHandled = false;
-      }
-    },
-    { passive: true }
-  );
-
-  function processSwipe(deltaX) {
-    const currentIdx = getCurrentSectionIndex();
-    if (deltaX < 0) {
-      // Swipe Left -> Next Section
-      if (currentIdx < sectionIds.length - 1) {
-        navigateToSection(currentIdx + 1);
-      } else {
-        showToast(`<i class="fa-solid fa-check"></i> Last section: ${sectionTitles[sectionIds[currentIdx]]}`);
-      }
-    } else {
-      // Swipe Right -> Previous Section
-      if (currentIdx > 0) {
-        navigateToSection(currentIdx - 1);
-      } else {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-        showToast(`<i class="fa-solid fa-arrow-up"></i> Top of CV`);
-      }
-    }
+  function onTouchStart(e) {
+    if (window.innerWidth >= 768) return;
+    const pt = e.touches ? e.touches[0] : e;
+    touchStartX = pt.clientX;
+    touchStartY = pt.clientY;
+    touchLastX = touchStartX;
+    touchLastY = touchStartY;
+    touchStartTime = Date.now();
+    isTracking = true;
+    swipeTriggered = false;
   }
 
-  document.addEventListener(
-    "touchmove",
-    function (e) {
-      if (!isTouching || !e.touches || e.touches.length !== 1) return;
-      touchLastX = e.touches[0].clientX;
-      touchLastY = e.touches[0].clientY;
+  function onTouchMove(e) {
+    if (!isTracking || window.innerWidth >= 768) return;
+    const pt = e.touches ? e.touches[0] : e;
+    touchLastX = pt.clientX;
+    touchLastY = pt.clientY;
 
-      const deltaX = touchLastX - touchStartX;
-      const deltaY = touchLastY - touchStartY;
-      const elapsed = Date.now() - touchStartTime;
+    const deltaX = touchLastX - touchStartX;
+    const deltaY = touchLastY - touchStartY;
+    const absX = Math.abs(deltaX);
+    const absY = Math.abs(deltaY);
 
-      // If user has distinctly swiped horizontally >= 40px within 750ms, trigger immediately!
-      if (!swipeHandled && elapsed < 750 && Math.abs(deltaX) >= 40 && Math.abs(deltaX) > Math.abs(deltaY) * 1.15) {
-        const target = e.target;
-        if (target && typeof target.closest === "function" && target.closest("a, button, input, textarea")) {
-          return;
+    // Instant trigger when user slides finger >= 48px horizontally
+    if (!swipeTriggered && absX >= 48 && absX > absY * 1.25) {
+      swipeTriggered = true;
+      if (deltaX < 0) {
+        // Swipe Left -> Next Section
+        if (currentTabIndex < tabIds.length - 1) {
+          switchToTab(currentTabIndex + 1);
+        } else {
+          showToast(`<i class="fa-solid fa-check me-1"></i> Last section: ${tabTitles[currentTabIndex]}`);
         }
-        swipeHandled = true;
-        processSwipe(deltaX);
-      }
-    },
-    { passive: true }
-  );
-
-  function handleTouchEnd() {
-    if (!isTouching) return;
-    isTouching = false;
-
-    if (!swipeHandled) {
-      const deltaX = touchLastX - touchStartX;
-      const deltaY = touchLastY - touchStartY;
-      const elapsed = Date.now() - touchStartTime;
-
-      if (elapsed < 750 && Math.abs(deltaX) >= 30 && Math.abs(deltaX) > Math.abs(deltaY) * 1.1) {
-        processSwipe(deltaX);
+      } else {
+        // Swipe Right -> Previous Section
+        if (currentTabIndex > 0) {
+          switchToTab(currentTabIndex - 1);
+        } else {
+          showToast(`<i class="fa-solid fa-check me-1"></i> First section: ${tabTitles[0]}`);
+        }
       }
     }
-
-    touchStartX = 0;
-    touchStartY = 0;
-    touchLastX = 0;
-    touchLastY = 0;
   }
 
-  document.addEventListener("touchend", handleTouchEnd, { passive: true });
-  document.addEventListener("touchcancel", handleTouchEnd, { passive: true });
+  function onTouchEnd() {
+    if (!isTracking || window.innerWidth >= 768) return;
+    isTracking = false;
 
-  setTimeout(setupTocControls, 250);
-});
+    if (!swipeTriggered) {
+      const deltaX = touchLastX - touchStartX;
+      const deltaY = touchLastY - touchStartY;
+      const absX = Math.abs(deltaX);
+      const absY = Math.abs(deltaY);
+      const duration = Date.now() - touchStartTime;
+
+      // Quick flick detection (30px if under 400ms)
+      if (duration < 400 && absX >= 30 && absX > absY * 1.2) {
+        swipeTriggered = true;
+        if (deltaX < 0) {
+          if (currentTabIndex < tabIds.length - 1) {
+            switchToTab(currentTabIndex + 1);
+          } else {
+            showToast(`<i class="fa-solid fa-check me-1"></i> Last section: ${tabTitles[currentTabIndex]}`);
+          }
+        } else {
+          if (currentTabIndex > 0) {
+            switchToTab(currentTabIndex - 1);
+          } else {
+            showToast(`<i class="fa-solid fa-check me-1"></i> First section: ${tabTitles[0]}`);
+          }
+        }
+      }
+    }
+  }
+
+  window.addEventListener("touchstart", onTouchStart, { passive: true });
+  window.addEventListener("touchmove", onTouchMove, { passive: true });
+  window.addEventListener("touchend", onTouchEnd, { passive: true });
+  window.addEventListener("touchcancel", onTouchEnd, { passive: true });
+
+  window.addEventListener("resize", function () {
+    if (window.innerWidth >= 768) {
+      document.querySelectorAll(".cv-tab-section").forEach((sec) => {
+        sec.classList.remove("active");
+        sec.style.display = "block";
+      });
+    } else {
+      document.querySelectorAll(".cv-tab-section").forEach((sec, idx) => {
+        sec.style.display = "";
+        if (idx === currentTabIndex) {
+          sec.classList.add("active");
+        } else {
+          sec.classList.remove("active");
+        }
+      });
+      updateActivePill(tabIds[currentTabIndex]);
+    }
+  });
+
+  // Watch for tocbot injection into #toc-sidebar
+  const tocTarget = document.getElementById("toc-sidebar");
+  if (tocTarget) {
+    const observer = new MutationObserver(() => {
+      setupTocControls();
+    });
+    observer.observe(tocTarget, { childList: true, subtree: true });
+  }
+
+  // Backup timers to ensure controls setup
+  [100, 300, 600, 1000].forEach((delay) => setTimeout(setupTocControls, delay));
+})();
 </script>
