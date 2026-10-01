@@ -120,6 +120,11 @@ cv:
           - "Simulates multi-fingered robotic hands interacting with objects of unknown mass distributions."
 
     Publications:
+      - title: "Real-time monitoring of two-phase slug flow characteristics via an AI-assisted wall-integrated multi-capacitance sensor"
+        date: 2026
+        url: https://www.sciencedirect.com/science/article/abs/pii/S095559862600333X
+        publisher: "Flow Measurement and Instrumentation"
+
       - title: "An Evaluation of Multi-Channel Sensors and Density Estimation Learning for Detecting Fire Blight Disease in Pear Orchards"
         date: 2024
         url: https://doi.org/10.3390/s24165387
@@ -142,7 +147,7 @@ cv:
 
       - title: "Incorporating Object Intrinsic Features Within Deep Grasp Affordance Prediction"
         date: 2020
-        url: https://doi.org/10.1109/LRA.2020.3007469
+        url: https://doi.org/10.1109/LRA.2020.3010444
         publisher: "IEEE Robotics and Automation Letters (RA-L), 5(4), 5231-5238"
 
       - title: "Deep Learning for Intelligent Transportation Systems: A Survey of Emerging Trends and Challenges"
@@ -152,7 +157,7 @@ cv:
 
       - title: "Modeling Grasp Motor Imagery Through Deep Conditional Generative Models"
         date: 2017
-        url: https://doi.org/10.1109/LRA.2017.2655143
+        url: https://doi.org/10.1109/LRA.2017.2650153
         publisher: "IEEE Robotics and Automation Letters (RA-L), 2(2), 757-764"
 
     Skills:

@@ -6,9 +6,9 @@ img: assets/img/two_phase_flow_system.jpg
 importance: 5
 category: "Industrial Inspection"
 date: 2026-07-27
-doi: "https://doi.org/10.1016/j.flowmeasinst.2025.103046"
-html: "https://doi.org/10.1016/j.flowmeasinst.2025.103046"
-pdf: "https://doi.org/10.1016/j.flowmeasinst.2025.103046"
+doi: "https://doi.org/10.1016/j.flowmeasinst.2026.103519"
+html: "https://www.sciencedirect.com/science/article/abs/pii/S095559862600333X"
+pdf: "https://www.sciencedirect.com/science/article/abs/pii/S095559862600333X"
 related_publications: true
 ---
 
@@ -31,6 +31,7 @@ Real-time monitoring of two-phase gas-liquid slug flow in metallic pipelines is 
 - **Experimental Validation:** Validated on a vertical gas-liquid flow loop facility using air-water and CO2-water systems in collaboration with Dr. Shahriyar Ghazanfari Holagh, [Dr. Olufemi Bamidele](https://www.linkedin.com/in/olufemi-eyitope-bamidele/), Dr. Medhat Moussa, and Dr. Wael Ahmed.
 
 <div class="project-actions mt-4 pt-3 border-top d-flex gap-2">
-  <a href="https://doi.org/10.1016/j.flowmeasinst.2025.103046" target="_blank" class="btn btn-sm btn-outline-primary" role="button">DOI Paper</a>
+  <a href="https://www.sciencedirect.com/science/article/abs/pii/S095559862600333X" target="_blank" class="btn btn-sm btn-outline-primary" role="button">ScienceDirect Paper</a>
+  <a href="https://doi.org/10.1016/j.flowmeasinst.2026.103519" target="_blank" class="btn btn-sm btn-outline-secondary" role="button">DOI</a>
   <a href="https://www.linkedin.com/feed/update/urn:li:activity:7487634747632820224/" target="_blank" class="btn btn-sm btn-outline-secondary" role="button">LinkedIn Post</a>
 </div>

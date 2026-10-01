@@ -6,7 +6,7 @@ img: assets/img/grasp_affordance.png
 importance: 5
 category: "Robotics and Deep Learning"
 date: 2020-07-01
-doi: "https://doi.org/10.1109/LRA.2020.3007469"
+doi: "https://doi.org/10.1109/LRA.2020.3010444"
 html: "https://ieeexplore.ieee.org/abstract/document/9144383"
 pdf: "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9144383"
 related_publications: true
@@ -29,4 +29,7 @@ When robots manipulate objects, an object's visual geometric centroid often dive
 - **Few-Shot Learning Formulation:** Framed the discovery of stable grasp poses for objects with unknown intrinsic properties as a few-shot learning problem.
 - **Real-Robot Experimental Rig:** Built a customized automated collection pipeline using a Fanuc robotic arm and modular modular 3D objects with configurable internal weight distributions.
 
-**Publication:** [IEEE RA-L 2020 Paper](https://ieeexplore.ieee.org/abstract/document/9144383)
+<div class="project-actions mt-4 pt-3 border-top d-flex gap-2">
+  <a href="https://doi.org/10.1109/LRA.2020.3010444" target="_blank" class="btn btn-sm btn-outline-primary" role="button">DOI Paper</a>
+  <a href="https://ieeexplore.ieee.org/abstract/document/9144383" target="_blank" class="btn btn-sm btn-outline-secondary" role="button">IEEE Xplore</a>
+</div>

@@ -9,6 +9,7 @@ date: 2024-02-01
 doi: "https://doi.org/10.3390/agriculture14020173"
 html: "https://www.mdpi.com/2077-0472/14/2/173"
 pdf: "https://www.mdpi.com/2077-0472/14/2/173/pdf"
+video: "https://www.ctvnews.ca/kitchener/article/smart-robot-could-transform-produce-picking-farms"
 related_publications: true
 ---
 
@@ -30,4 +31,4 @@ Commercial production greenhouses present extremely complex visual environments:
 - **Generalization Analysis:** Evaluated the cross-domain robustness of Mask-RCNN instance segmentation models when exposed to new greenhouse sites and unseen cultivars.
 - **Robotic Harvesting Precursor:** Serves as the vision backbone for autonomous mobile tomato harvesting robots in commercial production facilities.
 
-**Publication:** [Agriculture 2024 Paper](https://www.mdpi.com/2077-0472/14/2/173) | [CTV News Video Feature](https://kitchener.ctvnews.ca/smart-robot-could-transform-produce-picking-farms-1.6807981)
+**Publication:** [Agriculture 2024 Paper](https://www.mdpi.com/2077-0472/14/2/173) | [CTV News Video Feature](https://www.ctvnews.ca/kitchener/article/smart-robot-could-transform-produce-picking-farms)

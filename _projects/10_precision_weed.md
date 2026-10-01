@@ -36,5 +36,5 @@ Traditional scouting approaches face several fundamental bottlenecks:
 - **Field Demonstration:** Evaluated and presented at the Ontario Agricultural Robotics Working Group.
 
 <div class="project-actions mt-4 pt-3 border-top d-flex gap-2">
-  <a href="https://www.agroboticswg.com/meetings/april-12-2024-meeting" target="_blank" class="btn btn-sm btn-outline-primary" role="button">Ag Robotics Presentation</a>
+  <a href="https://www.agroboticswg.com/meetings/april-12" target="_blank" class="btn btn-sm btn-outline-primary" role="button">Ag Robotics Presentation</a>
 </div>
