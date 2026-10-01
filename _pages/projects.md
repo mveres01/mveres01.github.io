@@ -42,17 +42,11 @@ display_categories: [Robotics and Deep Learning, Industrial Inspection, Agri-Foo
               {% if project.html %}
                 <a href="{{ project.html }}" target="_blank" class="p-btn" role="button">HTML</a>
               {% endif %}
-              {% if project.pdf %}
+              {% if project.pdf and project.pdf != project.html %}
                 <a href="{{ project.pdf }}" target="_blank" class="p-btn" role="button">PDF</a>
-              {% endif %}
-              {% if project.arxiv %}
-                <a href="{{ project.arxiv }}" target="_blank" class="p-btn" role="button">arXiv</a>
               {% endif %}
               {% if project.code %}
                 <a href="{{ project.code }}" target="_blank" class="p-btn" role="button">Code</a>
-              {% endif %}
-              {% if project.video %}
-                <a href="{{ project.video }}" target="_blank" class="p-btn" role="button">Video</a>
               {% endif %}
               <a href="{{ project.url | relative_url }}" class="p-btn p-btn-more" role="button">Details &raquo;</a>
             </div>

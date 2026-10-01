@@ -8,7 +8,6 @@ category: "Industrial Inspection"
 date: 2026-07-27
 doi: "https://doi.org/10.1016/j.flowmeasinst.2026.103519"
 html: "https://www.sciencedirect.com/science/article/abs/pii/S095559862600333X"
-pdf: "https://www.sciencedirect.com/science/article/abs/pii/S095559862600333X"
 related_publications: true
 ---
 
