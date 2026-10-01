@@ -39,11 +39,9 @@ display_categories: [Robotics and Deep Learning, Industrial Inspection, Agri-Foo
             </h3>
             <p class="project-card-description">{{ project.description }}</p>
             <div class="project-card-actions">
-              {% if project.html %}
-                <a href="{{ project.html }}" target="_blank" class="p-btn" role="button">HTML</a>
-              {% endif %}
-              {% if project.pdf and project.pdf != project.html %}
-                <a href="{{ project.pdf }}" target="_blank" class="p-btn" role="button">PDF</a>
+              {% assign paper_link = project.html | default: project.pdf | default: project.doi %}
+              {% if paper_link %}
+                <a href="{{ paper_link }}" target="_blank" class="p-btn" role="button">Link</a>
               {% endif %}
               {% if project.code %}
                 <a href="{{ project.code }}" target="_blank" class="p-btn" role="button">Code</a>
