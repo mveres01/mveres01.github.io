@@ -4,7 +4,7 @@ title: "Deep Grasp Affordance with Object Intrinsic Features"
 description: "Few-shot robotic grasp affordance learning considering unknown mass and center-of-mass distributions using Fanuc manipulators."
 img: assets/img/grasp_affordance.png
 importance: 5
-category: "Robotics & Deep Learning"
+category: "Robotics and Deep Learning"
 date: 2020-07-01
 doi: "https://doi.org/10.1109/LRA.2020.3007469"
 html: "https://ieeexplore.ieee.org/abstract/document/9144383"

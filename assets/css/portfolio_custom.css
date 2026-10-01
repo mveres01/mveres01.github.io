@@ -958,3 +958,121 @@ ninja-keys {
   font-size: 0.92rem;
   line-height: 1.45;
 }
+
+/* --------------------------------------------------------------------------
+   8. Mobile CV TOC & Swipe Navigation Enhancements
+   -------------------------------------------------------------------------- */
+@media (max-width: 767.98px) {
+  /* Give a clean, prominent gap between the TOC sections and the CV header */
+  .col-sm-3:has(#toc-sidebar),
+  #toc-sidebar {
+    margin-bottom: 2.25rem !important;
+  }
+
+  #toc-sidebar {
+    position: static !important;
+    background-color: var(--global-card-bg-color, rgba(0, 0, 0, 0.02));
+    border: 1px solid var(--global-divider-color);
+    border-radius: 12px;
+    padding: 0.75rem 0.85rem !important;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  }
+
+  #toc-sidebar::before {
+    content: "Sections";
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #64748b;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Render the sections horizontally as modern pills instead of plain newlines */
+  #toc-sidebar .toc-list {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 0.5rem !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    list-style: none !important;
+    border-left: none !important;
+  }
+
+  #toc-sidebar .toc-list-item {
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+  }
+
+  #toc-sidebar .toc-link {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0.38rem 0.95rem !important;
+    font-size: 0.84rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.01em !important;
+    color: #334155 !important;
+    background-color: #f8fafc !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 9999px !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    transition: all 0.2s ease-in-out !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04) !important;
+    height: auto !important;
+  }
+
+  #toc-sidebar .toc-link::before {
+    display: none !important; /* Hide tocbot default left vertical indicator */
+  }
+
+  #toc-sidebar .toc-link:hover {
+    color: #0f172a !important;
+    border-color: #94a3b8 !important;
+    background-color: #f1f5f9 !important;
+  }
+
+  #toc-sidebar .toc-link.is-active-link,
+  #toc-sidebar .toc-list-item.is-active-li > .toc-link {
+    background-color: #0f172a !important;
+    color: #ffffff !important;
+    border-color: #0f172a !important;
+    font-weight: 700 !important;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.25) !important;
+  }
+
+  /* Temporary toast indicator for mobile swipe */
+  .cv-swipe-toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background-color: rgba(30, 41, 59, 0.92);
+    color: #ffffff;
+    padding: 0.5rem 1.25rem;
+    border-radius: 9999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    pointer-events: none;
+    opacity: 0;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 9999;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    backdrop-filter: blur(8px);
+  }
+
+  .cv-swipe-toast.visible {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}

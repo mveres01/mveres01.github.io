@@ -158,3 +158,136 @@ toc:
     <strong>Veres, M.</strong>, Moussa, M., &amp; Taylor, G.W. An Integrated Simulator and Dataset that Combines Grasping and Vision for Deep Learning. <em>arXiv:1702.02103</em>, 2017. [<a href="https://arxiv.org/abs/1702.02103" target="_blank">arXiv</a>] [<a href="https://github.com/mveres01/multi-contact-grasping" target="_blank">Code</a>]
   </li>
 </ol>
+
+<div id="cv-toast" class="cv-swipe-toast"></div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const sectionIds = ["experience", "publications", "preprints"];
+  const sectionTitles = {
+    experience: "Experience",
+    publications: "Publications",
+    preprints: "Preprints"
+  };
+
+  let toastTimer = null;
+  function showToast(text) {
+    const toast = document.getElementById("cv-toast");
+    if (!toast) return;
+    toast.innerHTML = text;
+    toast.classList.add("visible");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => {
+      toast.classList.remove("visible");
+    }, 1500);
+  }
+
+  function getCurrentSectionIndex() {
+    const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+    if (window.innerHeight + scrollY >= document.documentElement.scrollHeight - 60) {
+      return sectionIds.length - 1;
+    }
+    const nav = document.querySelector("#navbar");
+    const navHeight = nav ? nav.offsetHeight : 60;
+    let bestIndex = 0;
+    for (let i = 0; i < sectionIds.length; i++) {
+      const el = document.getElementById(sectionIds[i]);
+      if (el) {
+        const rect = el.getBoundingClientRect();
+        if (rect.top <= navHeight + window.innerHeight * 0.4) {
+          bestIndex = i;
+        }
+      }
+    }
+    return bestIndex;
+  }
+
+  function navigateToSection(index) {
+    if (index < 0 || index >= sectionIds.length) return;
+    const targetId = sectionIds[index];
+    const targetEl = document.getElementById(targetId);
+    if (!targetEl) return;
+
+    const nav = document.querySelector("#navbar");
+    const navHeight = nav ? nav.offsetHeight : 60;
+    const targetY = targetEl.getBoundingClientRect().top + window.pageYOffset - navHeight - 16;
+
+    window.scrollTo({
+      top: Math.max(0, targetY),
+      behavior: "smooth"
+    });
+
+    showToast(`<i class="fa-solid fa-arrow-right-arrow-left"></i> ${sectionTitles[targetId]} (${index + 1}/${sectionIds.length})`);
+  }
+
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let touchStartTime = 0;
+
+  document.addEventListener(
+    "touchstart",
+    function (e) {
+      if (e.touches && e.touches.length === 1) {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+        touchStartTime = Date.now();
+      }
+    },
+    { passive: true }
+  );
+
+  document.addEventListener(
+    "touchcancel",
+    function () {
+      touchStartX = 0;
+      touchStartY = 0;
+    },
+    { passive: true }
+  );
+
+  document.addEventListener(
+    "touchend",
+    function (e) {
+      if (!touchStartX || !e.changedTouches || e.changedTouches.length !== 1) return;
+      const touchEndX = e.changedTouches[0].clientX;
+      const touchEndY = e.changedTouches[0].clientY;
+      const deltaX = touchEndX - touchStartX;
+      const deltaY = touchEndY - touchStartY;
+      const duration = Date.now() - touchStartTime;
+
+      const target = e.target;
+      if (target && typeof target.closest === "function") {
+        if (target.closest("a") || target.closest("button") || target.closest("input") || target.closest("textarea")) {
+          touchStartX = 0;
+          touchStartY = 0;
+          return;
+        }
+      }
+
+      // Must be a distinct horizontal swipe
+      if (duration < 600 && Math.abs(deltaX) > 40 && Math.abs(deltaX) > Math.abs(deltaY) * 1.3) {
+        const currentIdx = getCurrentSectionIndex();
+        if (deltaX < 0) {
+          // Swipe Left -> Next Section
+          if (currentIdx < sectionIds.length - 1) {
+            navigateToSection(currentIdx + 1);
+          } else {
+            showToast(`<i class="fa-solid fa-check"></i> Already at last section: ${sectionTitles[sectionIds[currentIdx]]}`);
+          }
+        } else {
+          // Swipe Right -> Previous Section
+          if (currentIdx > 0) {
+            navigateToSection(currentIdx - 1);
+          } else {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            showToast(`<i class="fa-solid fa-arrow-up"></i> Top of CV`);
+          }
+        }
+      }
+      touchStartX = 0;
+      touchStartY = 0;
+    },
+    { passive: true }
+  );
+});
+</script>

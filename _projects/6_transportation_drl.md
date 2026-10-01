@@ -4,7 +4,7 @@ title: "Deep Reinforcement Learning for Vehicle Routing & TSP"
 description: "Comprehensive survey and open-source PyTorch implementation of deep reinforcement learning for combinatorial optimization problems."
 img: assets/img/transportation_vrp.png
 importance: 6
-category: "Robotics & Deep Learning"
+category: "Robotics and Deep Learning"
 date: 2019-08-01
 doi: "https://doi.org/10.1109/TITS.2019.2929020"
 html: "https://ieeexplore.ieee.org/document/8771378"

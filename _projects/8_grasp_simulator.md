@@ -4,7 +4,7 @@ title: "Integrated Robot Grasping Simulator & Multimodal Dataset"
 description: "Automated simulation platform for physical multi-fingered grasp-and-lift trials with simultaneous multimodal vision data acquisition."
 img: assets/img/grasp_simulator.png
 importance: 8
-category: "Robotics & Deep Learning"
+category: "Robotics and Deep Learning"
 date: 2017-02-01
 arxiv: "https://arxiv.org/abs/1702.02103"
 html: "https://arxiv.org/abs/1702.02103"

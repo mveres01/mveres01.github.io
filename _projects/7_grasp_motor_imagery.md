@@ -4,7 +4,7 @@ title: "Modeling Grasp Motor Imagery with Deep Generative Models"
 description: "Deep conditional generative models for generating diverse, multimodal robotic grasps on complex 3D objects in simulation."
 img: assets/img/motor_imagery.png
 importance: 7
-category: "Robotics & Deep Learning"
+category: "Robotics and Deep Learning"
 date: 2017-05-01
 doi: "https://doi.org/10.1109/LRA.2017.2650153"
 html: "https://ieeexplore.ieee.org/abstract/document/7814247"
