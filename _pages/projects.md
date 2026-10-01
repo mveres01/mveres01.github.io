@@ -5,7 +5,7 @@ permalink: /projects/
 description: Applied machine learning and robotics research spanning agriculture, industrial metrology, and robotic manipulation.
 nav: true
 nav_order: 1
-display_categories: [Robotics and Deep Learning, Agri-Food & Robotics, Industrial Inspection]
+display_categories: [Robotics and Deep Learning, Industrial Inspection, Agri-Food & Robotics]
 ---
 
 <link rel="stylesheet" href="{{ '/assets/css/portfolio_custom.css' | relative_url | bust_file_cache }}">

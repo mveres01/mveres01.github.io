@@ -1089,3 +1089,8 @@ ninja-keys {
     transform: translateX(-50%) translateY(0);
   }
 }
+
+/* Hide redundant CV page header */
+.post:has(.cv-header) .post-header {
+  display: none !important;
+}

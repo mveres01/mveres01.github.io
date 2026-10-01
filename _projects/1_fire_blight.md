@@ -3,7 +3,7 @@ layout: page
 title: "Fire Blight Disease Detection in Pear Orchards"
 description: "Multi-channel RGB and NIR sensing with density estimation learning for early symptom identification in commercial apple and pear orchards."
 img: assets/img/fire_blight.png
-importance: 1
+importance: 2
 category: "Agri-Food & Robotics"
 date: 2024-08-16
 doi: "https://doi.org/10.3390/s24165387"

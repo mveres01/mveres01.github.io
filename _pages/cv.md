@@ -4,10 +4,15 @@ permalink: /cv/
 title: CV
 nav: true
 nav_order: 2
-description: Machine Learning Research Engineer &bull; Curriculum Vitae
 toc:
   sidebar: left
 ---
+
+<style>
+  .post-header {
+    display: none !important;
+  }
+</style>
 
 <link rel="stylesheet" href="{{ '/assets/css/portfolio_custom.css' | relative_url | bust_file_cache }}">
 

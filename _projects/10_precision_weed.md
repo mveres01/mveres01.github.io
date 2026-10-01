@@ -3,8 +3,8 @@ layout: page
 title: "Autonomous Weed Scouting in Commercial Crop Fields"
 description: "High-throughput robotic scouting and deep learning weed localization to overcome the critical limitations of manual field inspection."
 img: assets/img/precision_weed_detection.jpg
-date: 2024-04-12
-importance: 2
+date: 2025-01-15
+importance: 1
 category: "Agri-Food & Robotics"
 related_publications: true
 ---
