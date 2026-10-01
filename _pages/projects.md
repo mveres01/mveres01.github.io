@@ -39,9 +39,6 @@ display_categories: [Robotics and Deep Learning, Industrial Inspection, Agri-Foo
             </h3>
             <p class="project-card-description">{{ project.description }}</p>
             <div class="project-card-actions">
-              {% if project.doi %}
-                <a href="{{ project.doi }}" target="_blank" class="p-btn" role="button">DOI</a>
-              {% endif %}
               {% if project.html %}
                 <a href="{{ project.html }}" target="_blank" class="p-btn" role="button">HTML</a>
               {% endif %}

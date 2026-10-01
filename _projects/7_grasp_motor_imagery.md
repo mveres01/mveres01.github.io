@@ -6,7 +6,7 @@ img: assets/img/motor_imagery.png
 importance: 7
 category: "Robotics and Deep Learning"
 date: 2017-05-01
-doi: "https://doi.org/10.1109/LRA.2017.2650153"
+doi: "https://doi.org/10.1109/LRA.2017.2651945"
 html: "https://ieeexplore.ieee.org/abstract/document/7814247"
 pdf: "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7814247"
 related_publications: true
@@ -29,4 +29,6 @@ Physical objects admit multiple feasible grasp configurations — there is rarel
 - **Conditional Generative Modeling:** Employs conditional generative architectures to model the probability distribution over high-dimensional multi-finger gripper configurations given 3D object geometries.
 - **Multimodal Grasp Synthesis:** Demonstrated that the model captures multiple distinct grasp modes for the same object rather than averaging out to an unstable mean pose.
 
-**Publication:** [IEEE RA-L 2017 Paper](https://ieeexplore.ieee.org/abstract/document/7814247)
+<div class="project-actions mt-4 pt-3 border-top d-flex gap-2">
+  <a href="https://ieeexplore.ieee.org/abstract/document/7814247" target="_blank" class="btn btn-sm btn-outline-primary" role="button">IEEE RA-L Paper</a>
+</div>

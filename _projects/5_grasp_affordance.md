@@ -30,6 +30,5 @@ When robots manipulate objects, an object's visual geometric centroid often dive
 - **Real-Robot Experimental Rig:** Built a customized automated collection pipeline using a Fanuc robotic arm and modular modular 3D objects with configurable internal weight distributions.
 
 <div class="project-actions mt-4 pt-3 border-top d-flex gap-2">
-  <a href="https://doi.org/10.1109/LRA.2020.3010444" target="_blank" class="btn btn-sm btn-outline-primary" role="button">DOI Paper</a>
-  <a href="https://ieeexplore.ieee.org/abstract/document/9144383" target="_blank" class="btn btn-sm btn-outline-secondary" role="button">IEEE Xplore</a>
+  <a href="https://ieeexplore.ieee.org/abstract/document/9144383" target="_blank" class="btn btn-sm btn-outline-primary" role="button">IEEE Xplore Paper</a>
 </div>

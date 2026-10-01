@@ -32,6 +32,5 @@ Real-time monitoring of two-phase gas-liquid slug flow in metallic pipelines is 
 
 <div class="project-actions mt-4 pt-3 border-top d-flex gap-2">
   <a href="https://www.sciencedirect.com/science/article/abs/pii/S095559862600333X" target="_blank" class="btn btn-sm btn-outline-primary" role="button">ScienceDirect Paper</a>
-  <a href="https://doi.org/10.1016/j.flowmeasinst.2026.103519" target="_blank" class="btn btn-sm btn-outline-secondary" role="button">DOI</a>
   <a href="https://www.linkedin.com/feed/update/urn:li:activity:7487634747632820224/" target="_blank" class="btn btn-sm btn-outline-secondary" role="button">LinkedIn Post</a>
 </div>
