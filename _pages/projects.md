@@ -8,7 +8,7 @@ nav_order: 1
 display_categories: [Agri-Food & Robotics, Industrial Inspection, Robotics & Deep Learning]
 ---
 
-<link rel="stylesheet" href="{{ '/assets/css/portfolio_custom.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/portfolio_custom.css' | relative_url | bust_file_cache }}">
 
 <div class="projects">
 {% for category in page.display_categories %}
@@ -63,6 +63,7 @@ display_categories: [Agri-Food & Robotics, Industrial Inspection, Robotics & Dee
         </div>
       {% endfor %}
     </div>
+
   </div>
 {% endfor %}
 

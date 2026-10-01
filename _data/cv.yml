@@ -61,7 +61,7 @@ cv:
           - "Collected real-world manipulation datasets using industrial Fanuc robotic arms and 3D vision sensors."
           - "Implemented physics simulations in Gazebo and PyBullet for few-shot learning with unknown object centers of mass."
 
-      - company: University of Guelph (School of Engineering)
+      - company: University of Guelph (College of Engineering)
         position: Graduate Teaching Assistant
         location: Guelph, Ontario, Canada
         url: https://www.uoguelph.ca/
@@ -86,7 +86,7 @@ cv:
 
       - title: Dean's Honours List
         date: 2013
-        awarder: School of Engineering, University of Guelph
+        awarder: College of Engineering, University of Guelph
         summary: Recognized for exceptional academic standing in engineering coursework.
 
     Projects:

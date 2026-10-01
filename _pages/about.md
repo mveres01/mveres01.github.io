@@ -9,7 +9,7 @@ profile:
   image: prof_pic.jpg
   image_circular: true # crops the image to make it circular
   more_info: >
-    <p class="font-weight-bold mb-0">School of Engineering</p>
+    <p class="font-weight-bold mb-0">College of Engineering</p>
     <p class="text-muted mb-0">University of Guelph</p>
 
 selected_papers: false # removed publications from about page
@@ -24,7 +24,7 @@ latest_posts:
   enabled: false
 ---
 
-<link rel="stylesheet" href="{{ '/assets/css/portfolio_custom.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/portfolio_custom.css' | relative_url | bust_file_cache }}">
 
 I’m a Machine Learning Engineer and Researcher focused on computer vision, robotics, and industrial automation. My work blends academic R&D and spans collaborations with industry partners, from high-throughput factory inspection systems to autonomous agricultural scouting.
 
@@ -38,6 +38,3 @@ I’m a Machine Learning Engineer and Researcher focused on computer vision, rob
 ### Background & Opportunities
 
 I speak English (native) and Korean (TOPIK Level 5). I'm open to roles in Canada or South Korea (as well as global opportunities that bridge the two).
-
-
-

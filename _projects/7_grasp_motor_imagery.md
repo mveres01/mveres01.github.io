@@ -12,7 +12,7 @@ pdf: "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7814247"
 related_publications: true
 ---
 
-<link rel="stylesheet" href="{{ '/assets/css/portfolio_custom.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/portfolio_custom.css' | relative_url | bust_file_cache }}">
 
 ### Overview
 

@@ -12,7 +12,7 @@ pdf: "https://doi.org/10.1016/j.flowmeasinst.2025.103046"
 related_publications: true
 ---
 
-<link rel="stylesheet" href="{{ '/assets/css/portfolio_custom.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/portfolio_custom.css' | relative_url | bust_file_cache }}">
 
 ### Overview
 
@@ -34,4 +34,3 @@ Real-time monitoring of two-phase gas-liquid slug flow in metallic pipelines is 
   <a href="https://doi.org/10.1016/j.flowmeasinst.2025.103046" target="_blank" class="btn btn-sm btn-outline-primary" role="button">DOI Paper</a>
   <a href="https://www.linkedin.com/feed/update/urn:li:activity:7487634747632820224/" target="_blank" class="btn btn-sm btn-outline-secondary" role="button">LinkedIn Post</a>
 </div>
-

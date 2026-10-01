@@ -12,7 +12,7 @@ pdf: "https://www.mdpi.com/1424-8220/21/24/8480/pdf"
 related_publications: true
 ---
 
-<link rel="stylesheet" href="{{ '/assets/css/portfolio_custom.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/portfolio_custom.css' | relative_url | bust_file_cache }}">
 
 ### Overview
 

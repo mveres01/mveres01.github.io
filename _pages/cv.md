@@ -9,7 +9,7 @@ toc:
   sidebar: left
 ---
 
-<link rel="stylesheet" href="{{ '/assets/css/portfolio_custom.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/portfolio_custom.css' | relative_url | bust_file_cache }}">
 
 <div class="cv-header mb-4 pb-2 border-bottom">
   <div class="d-flex flex-wrap justify-content-end align-items-center">
@@ -19,7 +19,6 @@ toc:
     </div>
   </div>
 </div>
-
 
 ## Experience
 
@@ -159,5 +158,3 @@ toc:
     <strong>Veres, M.</strong>, Moussa, M., &amp; Taylor, G.W. An Integrated Simulator and Dataset that Combines Grasping and Vision for Deep Learning. <em>arXiv:1702.02103</em>, 2017. [<a href="https://arxiv.org/abs/1702.02103" target="_blank">arXiv</a>] [<a href="https://github.com/mveres01/multi-contact-grasping" target="_blank">Code</a>]
   </li>
 </ol>
-
-

@@ -8,7 +8,7 @@ nav: false
 
 <!-- _pages/publications.md -->
 
-<link rel="stylesheet" href="{{ '/assets/css/portfolio_custom.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/portfolio_custom.css' | relative_url | bust_file_cache }}">
 
 <!-- Bibsearch Feature -->
 
