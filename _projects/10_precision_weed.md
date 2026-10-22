@@ -31,8 +31,8 @@ Traditional scouting approaches face several fundamental bottlenecks:
 
 ### Research Focus
 
-- **Automated Row Scanning:** Deploying high-throughput camera rigs on autonomous rovers to provide comprehensive, full-field visual coverage.
-- **Deep Learning Localization:** Training robust convolutional neural networks to differentiate crop plants from look-alike weed seedlings at the earliest emergence stages.
+- **Automated Row Scanning:** Deploying high-throughput camera rigs on tractors manually driven throughout the field to provide comprehensive, full-field visual coverage.
+- **Deep Learning Localization:** Training YOLO models to differentiate crop plants from look-alike weed seedlings at the earliest emergence stages.
 - **Field Demonstration:** Evaluated and presented at the Ontario Agricultural Robotics Working Group.
 
 <div class="project-actions mt-4 pt-3 border-top d-flex gap-2">
